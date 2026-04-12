@@ -146,6 +146,22 @@ a:hover { text-decoration: underline; }
   gap: 20px;
   margin-bottom: 20px;
 }
+.knowledge-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.knowledge-card {
+  display: block;
+  padding: 18px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(110,168,254,0.10), rgba(255,255,255,0.02));
+  border: 1px solid rgba(110,168,254,0.18);
+}
+.knowledge-card h3 { margin: 0 0 8px; font-size: 18px; color: var(--text); }
+.knowledge-card p { margin: 0 0 10px; color: var(--muted); font-size: 13px; line-height: 1.6; }
+.knowledge-card ul { margin: 0; padding-left: 18px; color: #dde7ff; }
 .section-title { margin: 0 0 12px; font-size: 22px; }
 .table-wrap { overflow: auto; }
 table {
@@ -200,7 +216,7 @@ tr:nth-child(even) td { background: var(--table-stripe); }
   font-size: 13px;
 }
 @media (max-width: 960px) {
-  .header, .grid-2 { grid-template-columns: 1fr; }
+  .header, .grid-2, .knowledge-grid { grid-template-columns: 1fr; }
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .toolbar { position: static; }
   .actions { width: 100%; }
@@ -277,11 +293,15 @@ TEMPLATE = Template(r'''
     <div class="toolbar">
       <div class="nav-links">
         <a href="#overview">总览</a>
-        <a href="#latest">最新面经</a>
-        <a href="#themes">高频知识点</a>
+        <a href="#knowledge-nav">知识点跳转</a>
+        <a href="#themes">高频题型</a>
+        {% for item in knowledge_nav %}
+        <a href="#{{ item.anchor }}">{{ item.name }}</a>
+        {% endfor %}
         {% for section in sections %}
         <a href="#{{ section.anchor }}">{{ section.short_title }}</a>
         {% endfor %}
+        <a href="#latest">面经附录</a>
       </div>
       <div class="actions">
         <input id="search-input" class="search-input" placeholder="筛选最新面经表格：公司 / 岗位 / 标题" />
@@ -318,8 +338,51 @@ TEMPLATE = Template(r'''
       </section>
     </div>
 
+    <section class="report" id="knowledge-nav">
+      <h2 class="section-title">知识点快速跳转</h2>
+      <p style="color:var(--muted);margin-top:0">优先把高频知识点放在最前面。你可以直接点下面的卡片跳到对应知识点，不用来回翻整页。</p>
+      <div class="knowledge-grid">
+        {% for item in knowledge_nav %}
+        <a class="knowledge-card" href="#{{ item.anchor }}">
+          <h3>{{ item.name }}</h3>
+          <p>题目数 {{ item.question_count }} · 涉及公司 {{ item.company_count }} · 涉及面经 {{ item.post_count }}</p>
+          <ul>
+            {% for q in item.sample_questions %}
+            <li>{{ q }}</li>
+            {% endfor %}
+          </ul>
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+
+    {% for item in knowledge_nav %}
+    <section class="report" id="{{ item.anchor }}">
+      <h2 class="section-title">{{ item.name }}</h2>
+      <p style="color:var(--muted)">题目数 {{ item.question_count }} · 涉及公司 {{ item.company_count }} · 涉及面经 {{ item.post_count }}</p>
+      <div class="chips" style="margin-bottom:14px">
+        {% for company in item.companies[:10] %}
+        <span class="chip">{{ company }}</span>
+        {% endfor %}
+      </div>
+      <h3>代表题目</h3>
+      <ul>
+        {% for q in item.top_questions %}
+        <li>{{ q[0] }} <span style="color:var(--muted)">（{{ q[1] }} 次）</span></li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endfor %}
+
+    {% for section in sections %}
+    <section class="report" id="{{ section.anchor }}">
+      {{ section.html | safe }}
+    </section>
+    {% endfor %}
+
     <section class="report" id="latest">
-      <h2 class="section-title">最新面经列表</h2>
+      <h2 class="section-title">附录：最新面经列表</h2>
+      <p style="color:var(--muted);margin-top:0">具体面经条目放在附录区，优先级低于前面的知识点导航、聚类和题库。</p>
       <div class="table-wrap">
         <table>
           <thead>
@@ -340,12 +403,6 @@ TEMPLATE = Template(r'''
         </table>
       </div>
     </section>
-
-    {% for section in sections %}
-    <section class="report" id="{{ section.anchor }}">
-      {{ section.html | safe }}
-    </section>
-    {% endfor %}
 
     <div class="footer">
       由本地脚本自动生成。更新流程：抓取牛客面经 → 分析聚类 → 生成网页/PDF。
@@ -454,9 +511,9 @@ def main() -> None:
     generated_at = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
     sections = []
-    for path in REPORT_FILES:
+    for idx, path in enumerate(REPORT_FILES, start=1):
         sections.append({
-            'anchor': anchor_from_path(path),
+            'anchor': f'report-{idx}',
             'short_title': short_title(path),
             'html': md_to_html(path.read_text(encoding='utf-8')),
         })
@@ -469,6 +526,20 @@ def main() -> None:
         {'name': name, 'question_count': info['question_count'], 'company_count': len(info['companies']), 'post_count': info['post_count']}
         for name, info in list(analysis['topic_summary'].items())[:10]
     ]
+    knowledge_nav = []
+    for idx, (name, info) in enumerate(list(analysis['theme_summary'].items())[:10], start=1):
+        if name == '其他':
+            continue
+        knowledge_nav.append({
+            'name': name,
+            'anchor': f'knowledge-{idx}',
+            'question_count': info['question_count'],
+            'company_count': len(info['companies']),
+            'post_count': info['post_count'],
+            'companies': info['companies'],
+            'sample_questions': [q for q, _ in info['top_questions'][:3]],
+            'top_questions': info['top_questions'][:8],
+        })
     stats = {
         'interview_count': len(kept_items),
         'question_count': question_count,
@@ -484,6 +555,7 @@ def main() -> None:
         top_themes=top_themes,
         top_topics=top_topics,
         latest_items=sorted(kept_items, key=lambda x: (x.get('created_date') or '', x['title']), reverse=True),
+        knowledge_nav=knowledge_nav,
         sections=sections,
         pdf_name=PDF_PATH.name,
     )
