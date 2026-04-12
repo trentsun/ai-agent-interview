@@ -41,7 +41,6 @@ STYLE = r'''
   --text: #eaf0ff;
   --muted: #9fb0d8;
   --primary: #6ea8fe;
-  --primary-2: #8b5cf6;
   --border: rgba(255,255,255,0.12);
   --chip: rgba(110,168,254,0.12);
   --table-stripe: rgba(255,255,255,0.03);
@@ -58,24 +57,76 @@ body {
 a { color: #9ec5fe; text-decoration: none; }
 a:hover { text-decoration: underline; }
 .page {
-  max-width: 1280px;
+  max-width: 1640px;
   margin: 0 auto;
-  padding: 24px;
+  padding: 20px;
 }
-.header {
+.layout {
   display: grid;
-  grid-template-columns: 1.8fr 1fr;
+  grid-template-columns: 290px minmax(0, 1fr);
   gap: 20px;
-  margin-bottom: 20px;
+  align-items: start;
 }
-.hero, .side-panel, .card, .report, .toolbar {
+.sidebar, .hero, .side-panel, .card, .report, .toolbar {
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)), var(--panel);
   border: 1px solid var(--border);
   border-radius: 20px;
   box-shadow: var(--shadow);
 }
-.hero { padding: 28px; }
-.hero h1 { margin: 0 0 10px; font-size: 34px; line-height: 1.2; }
+.sidebar {
+  position: sticky;
+  top: 18px;
+  padding: 18px;
+  max-height: calc(100vh - 36px);
+  overflow: auto;
+}
+.sidebar h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+.sidebar p {
+  margin: 0 0 14px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.sidebar-group { margin-bottom: 18px; }
+.sidebar-group h3 {
+  margin: 0 0 10px;
+  font-size: 13px;
+  color: #c9d8ff;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.sidebar-tree {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.sidebar-tree a {
+  display: block;
+  padding: 9px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.45;
+}
+.sidebar-tree a:hover {
+  background: rgba(110,168,254,0.12);
+  border-color: rgba(110,168,254,0.28);
+  text-decoration: none;
+}
+.main { min-width: 0; }
+.header {
+  display: grid;
+  grid-template-columns: 2.1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.hero { padding: 30px; }
+.hero h1 { margin: 0 0 10px; font-size: 38px; line-height: 1.18; }
 .hero p { color: var(--muted); margin: 0 0 14px; font-size: 15px; }
 .side-panel { padding: 22px; }
 .meta-list { margin: 0; padding-left: 18px; color: var(--muted); }
@@ -109,21 +160,16 @@ a:hover { text-decoration: underline; }
   margin-bottom: 20px;
   position: sticky;
   top: 12px;
-  z-index: 9;
+  z-index: 8;
   backdrop-filter: blur(10px);
 }
-.nav-links { display: flex; flex-wrap: wrap; gap: 10px; }
-.nav-links a {
-  padding: 8px 12px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid var(--border);
-  color: var(--text);
-  font-size: 13px;
+.toolbar-title {
+  font-size: 14px;
+  color: var(--muted);
 }
 .actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .search-input {
-  min-width: 280px;
+  min-width: 320px;
   background: var(--panel-2);
   color: var(--text);
   border: 1px solid var(--border);
@@ -142,13 +188,13 @@ a:hover { text-decoration: underline; }
 }
 .grid-2 {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1.2fr 0.95fr;
   gap: 20px;
   margin-bottom: 20px;
 }
 .knowledge-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
   margin-bottom: 20px;
 }
@@ -162,7 +208,7 @@ a:hover { text-decoration: underline; }
 .knowledge-card h3 { margin: 0 0 8px; font-size: 18px; color: var(--text); }
 .knowledge-card p { margin: 0 0 10px; color: var(--muted); font-size: 13px; line-height: 1.6; }
 .knowledge-card ul { margin: 0; padding-left: 18px; color: #dde7ff; }
-.section-title { margin: 0 0 12px; font-size: 22px; }
+.section-title { margin: 0 0 12px; font-size: 24px; }
 .table-wrap { overflow: auto; }
 table {
   width: 100%;
@@ -177,12 +223,12 @@ th, td {
 }
 tr:nth-child(even) td { background: var(--table-stripe); }
 .report {
-  padding: 26px;
+  padding: 28px;
   margin-bottom: 20px;
 }
 .report h1:first-child, .report h2:first-child { margin-top: 0; }
 .report h1, .report h2, .report h3, .report h4 { scroll-margin-top: 90px; }
-.report p, .report li { line-height: 1.7; color: #dde7ff; }
+.report p, .report li { line-height: 1.72; color: #dde7ff; }
 .report ul, .report ol { padding-left: 22px; }
 .report code {
   background: rgba(255,255,255,0.08);
@@ -215,8 +261,16 @@ tr:nth-child(even) td { background: var(--table-stripe); }
   padding: 30px 0 10px;
   font-size: 13px;
 }
-@media (max-width: 960px) {
+@media (max-width: 1180px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar {
+    position: static;
+    max-height: none;
+  }
   .header, .grid-2, .knowledge-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 820px) {
+  .page { padding: 14px; }
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .toolbar { position: static; }
   .actions { width: 100%; }
@@ -225,7 +279,8 @@ tr:nth-child(even) td { background: var(--table-stripe); }
 @media print {
   body { background: white; color: #111; }
   .page { max-width: none; padding: 0; }
-  .toolbar, .footer { display: none !important; }
+  .sidebar, .toolbar, .footer { display: none !important; }
+  .layout { display: block; }
   .hero, .side-panel, .card, .report { box-shadow: none; background: white; border-color: #ddd; color: #111; }
   .hero p, .side-panel, .label, .hint, .meta-list, .footer { color: #444; }
   .report p, .report li, .report a, .hero h1, .section-title { color: #111; }
@@ -260,152 +315,184 @@ TEMPLATE = Template(r'''
 </head>
 <body>
   <div class="page">
-    <div class="header">
-      <section class="hero">
-        <h1>{{ title }}</h1>
-        <p>{{ subtitle }}</p>
-        <div class="stats">
-          <div class="card"><div class="label">面经样本数</div><div class="value">{{ stats.interview_count }}</div><div class="hint">近 6 个月筛选后的有效面经</div></div>
-          <div class="card"><div class="label">提取题目数</div><div class="value">{{ stats.question_count }}</div><div class="hint">来自全部面经的问题/考点</div></div>
-          <div class="card"><div class="label">覆盖公司数</div><div class="value">{{ stats.company_count }}</div><div class="hint">字节 / 腾讯 / 淘天 / 快手 等</div></div>
-          <div class="card"><div class="label">最后构建时间</div><div class="value" style="font-size:18px;line-height:1.45">{{ stats.generated_at }}</div><div class="hint">刷新命令：./refresh_interview_site.sh</div></div>
+    <div class="layout">
+      <aside class="sidebar">
+        <h2>目录</h2>
+        <p>左侧目录树固定，右侧内容区尽量铺满。你可以一直通过这里跳转，不用在长页面里来回滚动。</p>
+
+        <div class="sidebar-group">
+          <h3>核心导航</h3>
+          <div class="sidebar-tree">
+            <a href="#overview">总览</a>
+            <a href="#knowledge-nav">知识点导航卡片</a>
+            <a href="#themes">高频题型</a>
+          </div>
         </div>
-        <div class="chips">
-          {% for company, count in top_companies %}
-          <span class="chip">{{ company }} · {{ count }}</span>
-          {% endfor %}
+
+        <div class="sidebar-group">
+          <h3>知识点目录</h3>
+          <div class="sidebar-tree">
+            {% for item in knowledge_nav %}
+            <a href="#{{ item.anchor }}">{{ item.name }}</a>
+            {% endfor %}
+          </div>
         </div>
-      </section>
-      <aside class="side-panel">
-        <h3 style="margin-top:0">使用方式</h3>
-        <ul class="meta-list">
-          <li>本地直接打开：<code>site/index.html</code></li>
-          <li>本地启动服务：<code>./serve_interview_site.sh</code></li>
-          <li>公网临时分享：<code>./public_interview_site.sh</code></li>
-          <li>更新面经并重建网页：<code>./refresh_interview_site.sh</code></li>
-          <li>PDF 导出：<code>{{ pdf_name }}</code></li>
-        </ul>
-        <h3>你现在最适合怎么用</h3>
-        <p style="color:var(--muted)">平时本地直接看静态网页；需要外网访问时再开本地服务 + 临时隧道。后续只要刷新数据，网页和 PDF 都会一起更新。</p>
+
+        <div class="sidebar-group">
+          <h3>分析报告</h3>
+          <div class="sidebar-tree">
+            {% for section in sections %}
+            <a href="#{{ section.anchor }}">{{ section.short_title }}</a>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="sidebar-group">
+          <h3>附录</h3>
+          <div class="sidebar-tree">
+            <a href="#latest">最新面经列表</a>
+          </div>
+        </div>
       </aside>
-    </div>
 
-    <div class="toolbar">
-      <div class="nav-links">
-        <a href="#overview">总览</a>
-        <a href="#knowledge-nav">知识点跳转</a>
-        <a href="#themes">高频题型</a>
-        {% for item in knowledge_nav %}
-        <a href="#{{ item.anchor }}">{{ item.name }}</a>
-        {% endfor %}
-        {% for section in sections %}
-        <a href="#{{ section.anchor }}">{{ section.short_title }}</a>
-        {% endfor %}
-        <a href="#latest">面经附录</a>
-      </div>
-      <div class="actions">
-        <input id="search-input" class="search-input" placeholder="筛选最新面经表格：公司 / 岗位 / 标题" />
-        <a class="button" href="{{ pdf_name }}">下载 PDF</a>
-      </div>
-    </div>
-
-    <div id="overview" class="grid-2">
-      <section class="report">
-        <h2 class="section-title">高频知识点 Top 10</h2>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>知识点</th><th>题目数</th><th>涉及公司数</th><th>涉及面经数</th></tr></thead>
-            <tbody>
-              {% for row in top_themes %}
-              <tr><td>{{ row.name }}</td><td>{{ row.question_count }}</td><td>{{ row.company_count }}</td><td>{{ row.post_count }}</td></tr>
+      <main class="main">
+        <div class="header">
+          <section class="hero">
+            <h1>{{ title }}</h1>
+            <p>{{ subtitle }}</p>
+            <div class="stats">
+              <div class="card"><div class="label">面经样本数</div><div class="value">{{ stats.interview_count }}</div><div class="hint">近 6 个月筛选后的有效面经</div></div>
+              <div class="card"><div class="label">提取题目数</div><div class="value">{{ stats.question_count }}</div><div class="hint">来自全部面经的问题/考点</div></div>
+              <div class="card"><div class="label">覆盖公司数</div><div class="value">{{ stats.company_count }}</div><div class="hint">字节 / 腾讯 / 淘天 / 快手 等</div></div>
+              <div class="card"><div class="label">最后构建时间</div><div class="value" style="font-size:18px;line-height:1.45">{{ stats.generated_at }}</div><div class="hint">刷新命令：./refresh_interview_site.sh</div></div>
+            </div>
+            <div class="chips">
+              {% for company, count in top_companies %}
+              <span class="chip">{{ company }} · {{ count }}</span>
               {% endfor %}
-            </tbody>
-          </table>
+            </div>
+          </section>
+          <aside class="side-panel">
+            <h3 style="margin-top:0">使用方式</h3>
+            <ul class="meta-list">
+              <li>本地直接打开：<code>site/index.html</code></li>
+              <li>本地启动服务：<code>./serve_interview_site.sh</code></li>
+              <li>公网临时分享：<code>./public_interview_site.sh</code></li>
+              <li>更新面经并重建网页：<code>./refresh_interview_site.sh</code></li>
+              <li>PDF 导出：<code>{{ pdf_name }}</code></li>
+            </ul>
+            <h3>浏览建议</h3>
+            <p style="color:var(--muted)">先看右侧总览和知识点导航，再从左侧目录树进入具体知识点。面经原始条目放在最下方附录区。</p>
+          </aside>
         </div>
-      </section>
-      <section class="report" id="themes">
-        <h2 class="section-title">高频题型 Top 10</h2>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>题型</th><th>命中题数</th><th>涉及公司数</th><th>涉及面经数</th></tr></thead>
-            <tbody>
-              {% for row in top_topics %}
-              <tr><td>{{ row.name }}</td><td>{{ row.question_count }}</td><td>{{ row.company_count }}</td><td>{{ row.post_count }}</td></tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        </div>
-      </section>
-    </div>
 
-    <section class="report" id="knowledge-nav">
-      <h2 class="section-title">知识点快速跳转</h2>
-      <p style="color:var(--muted);margin-top:0">优先把高频知识点放在最前面。你可以直接点下面的卡片跳到对应知识点，不用来回翻整页。</p>
-      <div class="knowledge-grid">
+        <div class="toolbar">
+          <div class="toolbar-title">左侧目录树负责导航；右上角保留搜索和 PDF 下载。</div>
+          <div class="actions">
+            <input id="search-input" class="search-input" placeholder="筛选附录中的面经：公司 / 岗位 / 标题" />
+            <a class="button" href="{{ pdf_name }}">下载 PDF</a>
+          </div>
+        </div>
+
+        <div id="overview" class="grid-2">
+          <section class="report">
+            <h2 class="section-title">高频知识点 Top 10</h2>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>知识点</th><th>题目数</th><th>涉及公司数</th><th>涉及面经数</th></tr></thead>
+                <tbody>
+                  {% for row in top_themes %}
+                  <tr><td>{{ row.name }}</td><td>{{ row.question_count }}</td><td>{{ row.company_count }}</td><td>{{ row.post_count }}</td></tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <section class="report" id="themes">
+            <h2 class="section-title">高频题型 Top 10</h2>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>题型</th><th>命中题数</th><th>涉及公司数</th><th>涉及面经数</th></tr></thead>
+                <tbody>
+                  {% for row in top_topics %}
+                  <tr><td>{{ row.name }}</td><td>{{ row.question_count }}</td><td>{{ row.company_count }}</td><td>{{ row.post_count }}</td></tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <section class="report" id="knowledge-nav">
+          <h2 class="section-title">知识点快速导航</h2>
+          <p style="color:var(--muted);margin-top:0">优先把高频知识点放在最前面。可以点击下面卡片进入，也可以直接点左侧目录树。</p>
+          <div class="knowledge-grid">
+            {% for item in knowledge_nav %}
+            <a class="knowledge-card" href="#{{ item.anchor }}">
+              <h3>{{ item.name }}</h3>
+              <p>题目数 {{ item.question_count }} · 涉及公司 {{ item.company_count }} · 涉及面经 {{ item.post_count }}</p>
+              <ul>
+                {% for q in item.sample_questions %}
+                <li>{{ q }}</li>
+                {% endfor %}
+              </ul>
+            </a>
+            {% endfor %}
+          </div>
+        </section>
+
         {% for item in knowledge_nav %}
-        <a class="knowledge-card" href="#{{ item.anchor }}">
-          <h3>{{ item.name }}</h3>
-          <p>题目数 {{ item.question_count }} · 涉及公司 {{ item.company_count }} · 涉及面经 {{ item.post_count }}</p>
+        <section class="report" id="{{ item.anchor }}">
+          <h2 class="section-title">{{ item.name }}</h2>
+          <p style="color:var(--muted)">题目数 {{ item.question_count }} · 涉及公司 {{ item.company_count }} · 涉及面经 {{ item.post_count }}</p>
+          <div class="chips" style="margin-bottom:14px">
+            {% for company in item.companies[:12] %}
+            <span class="chip">{{ company }}</span>
+            {% endfor %}
+          </div>
+          <h3>代表题目</h3>
           <ul>
-            {% for q in item.sample_questions %}
-            <li>{{ q }}</li>
+            {% for q in item.top_questions %}
+            <li>{{ q[0] }} <span style="color:var(--muted)">（{{ q[1] }} 次）</span></li>
             {% endfor %}
           </ul>
-        </a>
+        </section>
         {% endfor %}
-      </div>
-    </section>
 
-    {% for item in knowledge_nav %}
-    <section class="report" id="{{ item.anchor }}">
-      <h2 class="section-title">{{ item.name }}</h2>
-      <p style="color:var(--muted)">题目数 {{ item.question_count }} · 涉及公司 {{ item.company_count }} · 涉及面经 {{ item.post_count }}</p>
-      <div class="chips" style="margin-bottom:14px">
-        {% for company in item.companies[:10] %}
-        <span class="chip">{{ company }}</span>
+        {% for section in sections %}
+        <section class="report" id="{{ section.anchor }}">
+          {{ section.html | safe }}
+        </section>
         {% endfor %}
-      </div>
-      <h3>代表题目</h3>
-      <ul>
-        {% for q in item.top_questions %}
-        <li>{{ q[0] }} <span style="color:var(--muted)">（{{ q[1] }} 次）</span></li>
-        {% endfor %}
-      </ul>
-    </section>
-    {% endfor %}
 
-    {% for section in sections %}
-    <section class="report" id="{{ section.anchor }}">
-      {{ section.html | safe }}
-    </section>
-    {% endfor %}
+        <section class="report" id="latest">
+          <h2 class="section-title">附录：最新面经列表</h2>
+          <p style="color:var(--muted);margin-top:0">具体面经条目放在附录区，优先级低于前面的知识点导航、聚类和题库。</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>日期</th><th>公司</th><th>岗位</th><th>轮次</th><th>标题</th><th>原帖</th></tr>
+              </thead>
+              <tbody>
+                {% for item in latest_items %}
+                <tr data-search-row="{{ item.created_date }} {{ item.company }} {{ item.role }} {{ item.round }} {{ item.title }}">
+                  <td>{{ item.created_date }}</td>
+                  <td>{{ item.company }}</td>
+                  <td>{{ item.role }}</td>
+                  <td>{{ item.round }}</td>
+                  <td>{{ item.title }}</td>
+                  <td><a href="{{ item.url }}" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </section>
 
-    <section class="report" id="latest">
-      <h2 class="section-title">附录：最新面经列表</h2>
-      <p style="color:var(--muted);margin-top:0">具体面经条目放在附录区，优先级低于前面的知识点导航、聚类和题库。</p>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr><th>日期</th><th>公司</th><th>岗位</th><th>轮次</th><th>标题</th><th>原帖</th></tr>
-          </thead>
-          <tbody>
-            {% for item in latest_items %}
-            <tr data-search-row="{{ item.created_date }} {{ item.company }} {{ item.role }} {{ item.round }} {{ item.title }}">
-              <td>{{ item.created_date }}</td>
-              <td>{{ item.company }}</td>
-              <td>{{ item.role }}</td>
-              <td>{{ item.round }}</td>
-              <td>{{ item.title }}</td>
-              <td><a href="{{ item.url }}" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <div class="footer">
-      由本地脚本自动生成。更新流程：抓取牛客面经 → 分析聚类 → 生成网页/PDF。
+        <div class="footer">
+          由本地脚本自动生成。更新流程：抓取牛客面经 → 分析聚类 → 生成网页/PDF。
+        </div>
+      </main>
     </div>
   </div>
   <script src="assets/app.js"></script>

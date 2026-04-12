@@ -10,767 +10,801 @@
 </head>
 <body>
   <div class="page">
-    <div class="header">
-      <section class="hero">
-        <h1>AI 应用开发面经仪表盘</h1>
-        <p>把牛客近 6 个月的 AI 应用开发 / Agent / 大模型应用相关面经，整理成可长期更新的本地网页。</p>
-        <div class="stats">
-          <div class="card"><div class="label">面经样本数</div><div class="value">32</div><div class="hint">近 6 个月筛选后的有效面经</div></div>
-          <div class="card"><div class="label">提取题目数</div><div class="value">464</div><div class="hint">来自全部面经的问题/考点</div></div>
-          <div class="card"><div class="label">覆盖公司数</div><div class="value">16</div><div class="hint">字节 / 腾讯 / 淘天 / 快手 等</div></div>
-          <div class="card"><div class="label">最后构建时间</div><div class="value" style="font-size:18px;line-height:1.45">2026-04-12 21:55:59</div><div class="hint">刷新命令：./refresh_interview_site.sh</div></div>
+    <div class="layout">
+      <aside class="sidebar">
+        <h2>目录</h2>
+        <p>左侧目录树固定，右侧内容区尽量铺满。你可以一直通过这里跳转，不用在长页面里来回滚动。</p>
+
+        <div class="sidebar-group">
+          <h3>核心导航</h3>
+          <div class="sidebar-tree">
+            <a href="#overview">总览</a>
+            <a href="#knowledge-nav">知识点导航卡片</a>
+            <a href="#themes">高频题型</a>
+          </div>
         </div>
-        <div class="chips">
-          
-          <span class="chip">字节 · 7</span>
-          
-          <span class="chip">淘天 · 4</span>
-          
-          <span class="chip">快手 · 4</span>
-          
-          <span class="chip">腾讯 · 3</span>
-          
-          <span class="chip">蚂蚁 · 2</span>
-          
-          <span class="chip">阿里国际 · 2</span>
-          
-          <span class="chip">小红书 · 1</span>
-          
-          <span class="chip">阿里云 · 1</span>
-          
-          <span class="chip">高德 · 1</span>
-          
-          <span class="chip">京东 · 1</span>
-          
+
+        <div class="sidebar-group">
+          <h3>知识点目录</h3>
+          <div class="sidebar-tree">
+            
+            <a href="#knowledge-1">Agent架构与范式</a>
+            
+            <a href="#knowledge-2">RAG与检索优化</a>
+            
+            <a href="#knowledge-3">后端基础与工程化</a>
+            
+            <a href="#knowledge-4">框架、MCP与工具调用</a>
+            
+            <a href="#knowledge-5">记忆与上下文管理</a>
+            
+            <a href="#knowledge-6">算法与编码题</a>
+            
+            <a href="#knowledge-7">评测、幻觉与数据集</a>
+            
+            <a href="#knowledge-8">模型基础与推理机制</a>
+            
+            <a href="#knowledge-9">项目介绍与项目拷打</a>
+            
+            <a href="#knowledge-10">业务场景设计</a>
+            
+          </div>
         </div>
-      </section>
-      <aside class="side-panel">
-        <h3 style="margin-top:0">使用方式</h3>
-        <ul class="meta-list">
-          <li>本地直接打开：<code>site/index.html</code></li>
-          <li>本地启动服务：<code>./serve_interview_site.sh</code></li>
-          <li>公网临时分享：<code>./public_interview_site.sh</code></li>
-          <li>更新面经并重建网页：<code>./refresh_interview_site.sh</code></li>
-          <li>PDF 导出：<code>牛客近6个月AI应用开发面经仪表盘.pdf</code></li>
-        </ul>
-        <h3>你现在最适合怎么用</h3>
-        <p style="color:var(--muted)">平时本地直接看静态网页；需要外网访问时再开本地服务 + 临时隧道。后续只要刷新数据，网页和 PDF 都会一起更新。</p>
+
+        <div class="sidebar-group">
+          <h3>分析报告</h3>
+          <div class="sidebar-tree">
+            
+            <a href="#report-1">总汇总</a>
+            
+            <a href="#report-2">知识点聚类</a>
+            
+            <a href="#report-3">高频题题库与答案框架</a>
+            
+            <a href="#report-4">公司维度对比分析</a>
+            
+          </div>
+        </div>
+
+        <div class="sidebar-group">
+          <h3>附录</h3>
+          <div class="sidebar-tree">
+            <a href="#latest">最新面经列表</a>
+          </div>
+        </div>
       </aside>
-    </div>
 
-    <div class="toolbar">
-      <div class="nav-links">
-        <a href="#overview">总览</a>
-        <a href="#knowledge-nav">知识点跳转</a>
-        <a href="#themes">高频题型</a>
-        
-        <a href="#knowledge-1">Agent架构与范式</a>
-        
-        <a href="#knowledge-2">RAG与检索优化</a>
-        
-        <a href="#knowledge-3">后端基础与工程化</a>
-        
-        <a href="#knowledge-4">框架、MCP与工具调用</a>
-        
-        <a href="#knowledge-5">记忆与上下文管理</a>
-        
-        <a href="#knowledge-6">算法与编码题</a>
-        
-        <a href="#knowledge-7">评测、幻觉与数据集</a>
-        
-        <a href="#knowledge-8">模型基础与推理机制</a>
-        
-        <a href="#knowledge-9">项目介绍与项目拷打</a>
-        
-        <a href="#knowledge-10">业务场景设计</a>
-        
-        
-        <a href="#report-1">总汇总</a>
-        
-        <a href="#report-2">知识点聚类</a>
-        
-        <a href="#report-3">高频题题库与答案框架</a>
-        
-        <a href="#report-4">公司维度对比分析</a>
-        
-        <a href="#latest">面经附录</a>
-      </div>
-      <div class="actions">
-        <input id="search-input" class="search-input" placeholder="筛选最新面经表格：公司 / 岗位 / 标题" />
-        <a class="button" href="牛客近6个月AI应用开发面经仪表盘.pdf">下载 PDF</a>
-      </div>
-    </div>
-
-    <div id="overview" class="grid-2">
-      <section class="report">
-        <h2 class="section-title">高频知识点 Top 10</h2>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>知识点</th><th>题目数</th><th>涉及公司数</th><th>涉及面经数</th></tr></thead>
-            <tbody>
+      <main class="main">
+        <div class="header">
+          <section class="hero">
+            <h1>AI 应用开发面经仪表盘</h1>
+            <p>把牛客近 6 个月的 AI 应用开发 / Agent / 大模型应用相关面经，整理成可长期更新的本地网页。</p>
+            <div class="stats">
+              <div class="card"><div class="label">面经样本数</div><div class="value">32</div><div class="hint">近 6 个月筛选后的有效面经</div></div>
+              <div class="card"><div class="label">提取题目数</div><div class="value">464</div><div class="hint">来自全部面经的问题/考点</div></div>
+              <div class="card"><div class="label">覆盖公司数</div><div class="value">16</div><div class="hint">字节 / 腾讯 / 淘天 / 快手 等</div></div>
+              <div class="card"><div class="label">最后构建时间</div><div class="value" style="font-size:18px;line-height:1.45">2026-04-12 22:04:01</div><div class="hint">刷新命令：./refresh_interview_site.sh</div></div>
+            </div>
+            <div class="chips">
               
-              <tr><td>Agent架构与范式</td><td>66</td><td>13</td><td>25</td></tr>
+              <span class="chip">字节 · 7</span>
               
-              <tr><td>RAG与检索优化</td><td>51</td><td>10</td><td>18</td></tr>
+              <span class="chip">淘天 · 4</span>
               
-              <tr><td>后端基础与工程化</td><td>45</td><td>10</td><td>17</td></tr>
+              <span class="chip">快手 · 4</span>
               
-              <tr><td>框架、MCP与工具调用</td><td>38</td><td>9</td><td>19</td></tr>
+              <span class="chip">腾讯 · 3</span>
               
-              <tr><td>记忆与上下文管理</td><td>34</td><td>10</td><td>18</td></tr>
+              <span class="chip">蚂蚁 · 2</span>
               
-              <tr><td>算法与编码题</td><td>22</td><td>7</td><td>17</td></tr>
+              <span class="chip">阿里国际 · 2</span>
               
-              <tr><td>评测、幻觉与数据集</td><td>20</td><td>8</td><td>14</td></tr>
+              <span class="chip">小红书 · 1</span>
               
-              <tr><td>模型基础与推理机制</td><td>17</td><td>6</td><td>11</td></tr>
+              <span class="chip">阿里云 · 1</span>
               
-              <tr><td>项目介绍与项目拷打</td><td>14</td><td>10</td><td>12</td></tr>
+              <span class="chip">高德 · 1</span>
               
-              <tr><td>业务场景设计</td><td>11</td><td>7</td><td>9</td></tr>
+              <span class="chip">京东 · 1</span>
               
-            </tbody>
-          </table>
+            </div>
+          </section>
+          <aside class="side-panel">
+            <h3 style="margin-top:0">使用方式</h3>
+            <ul class="meta-list">
+              <li>本地直接打开：<code>site/index.html</code></li>
+              <li>本地启动服务：<code>./serve_interview_site.sh</code></li>
+              <li>公网临时分享：<code>./public_interview_site.sh</code></li>
+              <li>更新面经并重建网页：<code>./refresh_interview_site.sh</code></li>
+              <li>PDF 导出：<code>牛客近6个月AI应用开发面经仪表盘.pdf</code></li>
+            </ul>
+            <h3>浏览建议</h3>
+            <p style="color:var(--muted)">先看右侧总览和知识点导航，再从左侧目录树进入具体知识点。面经原始条目放在最下方附录区。</p>
+          </aside>
         </div>
-      </section>
-      <section class="report" id="themes">
-        <h2 class="section-title">高频题型 Top 10</h2>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>题型</th><th>命中题数</th><th>涉及公司数</th><th>涉及面经数</th></tr></thead>
-            <tbody>
-              
-              <tr><td>检索/召回/重排/向量索引优化</td><td>38</td><td>10</td><td>16</td></tr>
-              
-              <tr><td>RAG/Agent 评测与幻觉治理</td><td>27</td><td>10</td><td>17</td></tr>
-              
-              <tr><td>算法题/手撕题</td><td>26</td><td>9</td><td>19</td></tr>
-              
-              <tr><td>MCP / Function Calling / Skills / Tool Calling</td><td>24</td><td>10</td><td>15</td></tr>
-              
-              <tr><td>记忆系统设计</td><td>22</td><td>7</td><td>12</td></tr>
-              
-              <tr><td>LangChain / LangGraph / 编排框架选型</td><td>20</td><td>5</td><td>10</td></tr>
-              
-              <tr><td>后端基础：Redis/缓存/MQ/高并发</td><td>17</td><td>7</td><td>9</td></tr>
-              
-              <tr><td>场景设计题（游戏/电商/安全/客服）</td><td>15</td><td>7</td><td>10</td></tr>
-              
-              <tr><td>项目介绍/项目拷打</td><td>14</td><td>10</td><td>12</td></tr>
-              
-              <tr><td>模型基础：Transformer/KV Cache/Temperature</td><td>13</td><td>4</td><td>8</td></tr>
-              
-            </tbody>
-          </table>
+
+        <div class="toolbar">
+          <div class="toolbar-title">左侧目录树负责导航；右上角保留搜索和 PDF 下载。</div>
+          <div class="actions">
+            <input id="search-input" class="search-input" placeholder="筛选附录中的面经：公司 / 岗位 / 标题" />
+            <a class="button" href="牛客近6个月AI应用开发面经仪表盘.pdf">下载 PDF</a>
+          </div>
         </div>
-      </section>
-    </div>
 
-    <section class="report" id="knowledge-nav">
-      <h2 class="section-title">知识点快速跳转</h2>
-      <p style="color:var(--muted);margin-top:0">优先把高频知识点放在最前面。你可以直接点下面的卡片跳到对应知识点，不用来回翻整页。</p>
-      <div class="knowledge-grid">
-        
-        <a class="knowledge-card" href="#knowledge-1">
-          <h3>Agent架构与范式</h3>
-          <p>题目数 66 · 涉及公司 13 · 涉及面经 25</p>
-          <ul>
-            
-            <li>#Agent面试会问什么？#</li>
-            
-            <li>为什么要做多 Agent，而不是把所有能力都塞进一个 Agent</li>
-            
-            <li>Agent 的规划、执行、反思三段式链路怎么设计</li>
-            
-          </ul>
-        </a>
-        
-        <a class="knowledge-card" href="#knowledge-2">
-          <h3>RAG与检索优化</h3>
-          <p>题目数 51 · 涉及公司 10 · 涉及面经 18</p>
-          <ul>
-            
-            <li>RAG 项目里怎么做召回闭环，才能让系统真的越用越准</li>
-            
-            <li>HyDE 的原理是什么，什么时候有效，什么时候会害人</li>
-            
-            <li>IVF、PQ、IVF-PQ 分别在做什么，为什么它们能把向量检索做快</li>
-            
-          </ul>
-        </a>
-        
-        <a class="knowledge-card" href="#knowledge-3">
-          <h3>后端基础与工程化</h3>
-          <p>题目数 45 · 涉及公司 10 · 涉及面经 17</p>
-          <ul>
-            
-            <li>了解redis集群吗？了解redis底层的存储逻辑吗？</li>
-            
-            <li>redis的性能单点能够有多少？集群能够有多少？</li>
-            
-            <li>我看你的黑马点评项目用的rabbitmq，为啥选这个？这个对比其他mq有什么特别的优势？（我说当时只学了这个，所以就用了，实际上rocketmq应该会更好）</li>
-            
-          </ul>
-        </a>
-        
-        <a class="knowledge-card" href="#knowledge-4">
-          <h3>框架、MCP与工具调用</h3>
-          <p>题目数 38 · 涉及公司 9 · 涉及面经 19</p>
-          <ul>
-            
-            <li>MCP、Function Calling、Skills、Agent 分别是什么，它们之间是什么关系</li>
-            
-            <li>LangChain 和 LangGraph 如果要选，你更看重什么维度</li>
-            
-            <li>MCP 和 CLI 工具接入在工程上分别解决什么问题，它们不是一回事</li>
-            
-          </ul>
-        </a>
-        
-        <a class="knowledge-card" href="#knowledge-5">
-          <h3>记忆与上下文管理</h3>
-          <p>题目数 34 · 涉及公司 10 · 涉及面经 18</p>
-          <ul>
-            
-            <li>Agent 的记忆一般怎么分层，为什么不能只靠聊天历史</li>
-            
-            <li>短期记忆和长期记忆应该如何精准提取，分别存什么内容更合理</li>
-            
-            <li>做完rag后llm能理解图片里的内容吗，还是通过加入上下文token后靠文本理解</li>
-            
-          </ul>
-        </a>
-        
-        <a class="knowledge-card" href="#knowledge-6">
-          <h3>算法与编码题</h3>
-          <p>题目数 22 · 涉及公司 7 · 涉及面经 17</p>
-          <ul>
-            
-            <li>算法题</li>
-            
-            <li>手撕合并k个升序链表（前几天pdd一面刚写完）</li>
-            
-            <li>算法题口头说一下1200w的数据里，怎么找到中位数</li>
-            
-          </ul>
-        </a>
-        
-        <a class="knowledge-card" href="#knowledge-7">
-          <h3>评测、幻觉与数据集</h3>
-          <p>题目数 20 · 涉及公司 8 · 涉及面经 14</p>
-          <ul>
-            
-            <li>AI 应用里的在线实验和传统 AB 测试有什么差别，为什么更难做</li>
-            
-            <li>RAG 的效果你怎么评估，不能只说看用户反馈</li>
-            
-            <li>幻觉问题你一般怎么处理，尤其是安全场景下的高风险幻觉</li>
-            
-          </ul>
-        </a>
-        
-        <a class="knowledge-card" href="#knowledge-8">
-          <h3>模型基础与推理机制</h3>
-          <p>题目数 17 · 涉及公司 6 · 涉及面经 11</p>
-          <ul>
-            
-            <li>平时你怎么利用大模型开发项目，而不是停留在写点 demo</li>
-            
-            <li>介绍一下对temperature的理解</li>
-            
-            <li>用过哪些模型，模型选择不是看排行榜的话，你一般怎么选</li>
-            
-          </ul>
-        </a>
-        
-        <a class="knowledge-card" href="#knowledge-9">
-          <h3>项目介绍与项目拷打</h3>
-          <p>题目数 14 · 涉及公司 10 · 涉及面经 12</p>
-          <ul>
-            
-            <li>自我介绍</li>
-            
-            <li>项目拷打</li>
-            
-            <li>介绍你写的这个项目</li>
-            
-          </ul>
-        </a>
-        
-        <a class="knowledge-card" href="#knowledge-10">
-          <h3>业务场景设计</h3>
-          <p>题目数 11 · 涉及公司 7 · 涉及面经 9</p>
-          <ul>
-            
-            <li>你对网络安全方向怎么看，为什么 AI 应用在这个方向上既有价值又有风险</li>
-            
-            <li>那为什么医院的问答项目里，不采用同样的实现</li>
-            
-            <li>除了导购，你认为在电商领域（如京东）还有哪些场景可以用到 Agent？</li>
-            
-          </ul>
-        </a>
-        
-      </div>
-    </section>
+        <div id="overview" class="grid-2">
+          <section class="report">
+            <h2 class="section-title">高频知识点 Top 10</h2>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>知识点</th><th>题目数</th><th>涉及公司数</th><th>涉及面经数</th></tr></thead>
+                <tbody>
+                  
+                  <tr><td>Agent架构与范式</td><td>66</td><td>13</td><td>25</td></tr>
+                  
+                  <tr><td>RAG与检索优化</td><td>51</td><td>10</td><td>18</td></tr>
+                  
+                  <tr><td>后端基础与工程化</td><td>45</td><td>10</td><td>17</td></tr>
+                  
+                  <tr><td>框架、MCP与工具调用</td><td>38</td><td>9</td><td>19</td></tr>
+                  
+                  <tr><td>记忆与上下文管理</td><td>34</td><td>10</td><td>18</td></tr>
+                  
+                  <tr><td>算法与编码题</td><td>22</td><td>7</td><td>17</td></tr>
+                  
+                  <tr><td>评测、幻觉与数据集</td><td>20</td><td>8</td><td>14</td></tr>
+                  
+                  <tr><td>模型基础与推理机制</td><td>17</td><td>6</td><td>11</td></tr>
+                  
+                  <tr><td>项目介绍与项目拷打</td><td>14</td><td>10</td><td>12</td></tr>
+                  
+                  <tr><td>业务场景设计</td><td>11</td><td>7</td><td>9</td></tr>
+                  
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <section class="report" id="themes">
+            <h2 class="section-title">高频题型 Top 10</h2>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>题型</th><th>命中题数</th><th>涉及公司数</th><th>涉及面经数</th></tr></thead>
+                <tbody>
+                  
+                  <tr><td>检索/召回/重排/向量索引优化</td><td>38</td><td>10</td><td>16</td></tr>
+                  
+                  <tr><td>RAG/Agent 评测与幻觉治理</td><td>27</td><td>10</td><td>17</td></tr>
+                  
+                  <tr><td>算法题/手撕题</td><td>26</td><td>9</td><td>19</td></tr>
+                  
+                  <tr><td>MCP / Function Calling / Skills / Tool Calling</td><td>24</td><td>10</td><td>15</td></tr>
+                  
+                  <tr><td>记忆系统设计</td><td>22</td><td>7</td><td>12</td></tr>
+                  
+                  <tr><td>LangChain / LangGraph / 编排框架选型</td><td>20</td><td>5</td><td>10</td></tr>
+                  
+                  <tr><td>后端基础：Redis/缓存/MQ/高并发</td><td>17</td><td>7</td><td>9</td></tr>
+                  
+                  <tr><td>场景设计题（游戏/电商/安全/客服）</td><td>15</td><td>7</td><td>10</td></tr>
+                  
+                  <tr><td>项目介绍/项目拷打</td><td>14</td><td>10</td><td>12</td></tr>
+                  
+                  <tr><td>模型基础：Transformer/KV Cache/Temperature</td><td>13</td><td>4</td><td>8</td></tr>
+                  
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
 
-    
-    <section class="report" id="knowledge-1">
-      <h2 class="section-title">Agent架构与范式</h2>
-      <p style="color:var(--muted)">题目数 66 · 涉及公司 13 · 涉及面经 25</p>
-      <div class="chips" style="margin-bottom:14px">
-        
-        <span class="chip">京东</span>
-        
-        <span class="chip">字节</span>
-        
-        <span class="chip">小红书</span>
-        
-        <span class="chip">快手</span>
-        
-        <span class="chip">淘天</span>
-        
-        <span class="chip">百度</span>
-        
-        <span class="chip">米哈游</span>
-        
-        <span class="chip">腾讯</span>
-        
-        <span class="chip">蚂蚁</span>
-        
-        <span class="chip">阿里云</span>
-        
-      </div>
-      <h3>代表题目</h3>
-      <ul>
-        
-        <li>#Agent面试会问什么？# <span style="color:var(--muted)">（3 次）</span></li>
-        
-        <li>为什么要做多 Agent，而不是把所有能力都塞进一个 Agent <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>Agent 的规划、执行、反思三段式链路怎么设计 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>RAG 可以怎么分类，Agentic RAG 和传统 RAG 差别在哪 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>Agent 和传统 workflow 的本质区别是什么，什么时候该选 Agent，什么时候不该选 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>智能体开发范式有哪些，分别适合什么场景 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>智能体的记忆机制应该怎么设计，为什么“全都记住”反而是坏事 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>设计智能体时，稳定性和安全性应该优先在哪些层面做约束 <span style="color:var(--muted)">（1 次）</span></li>
-        
-      </ul>
-    </section>
-    
-    <section class="report" id="knowledge-2">
-      <h2 class="section-title">RAG与检索优化</h2>
-      <p style="color:var(--muted)">题目数 51 · 涉及公司 10 · 涉及面经 18</p>
-      <div class="chips" style="margin-bottom:14px">
-        
-        <span class="chip">京东</span>
-        
-        <span class="chip">字节</span>
-        
-        <span class="chip">小红书</span>
-        
-        <span class="chip">快手</span>
-        
-        <span class="chip">淘天</span>
-        
-        <span class="chip">腾讯</span>
-        
-        <span class="chip">蔚来</span>
-        
-        <span class="chip">蚂蚁</span>
-        
-        <span class="chip">金山云</span>
-        
-        <span class="chip">阿里云</span>
-        
-      </div>
-      <h3>代表题目</h3>
-      <ul>
-        
-        <li>RAG 项目里怎么做召回闭环，才能让系统真的越用越准 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>HyDE 的原理是什么，什么时候有效，什么时候会害人 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>IVF、PQ、IVF-PQ 分别在做什么，为什么它们能把向量检索做快 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>向量索引有哪些典型类别，分别适合什么场景 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>为什么要用 RAG，而不是直接让模型回答安全分析问题 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>文档chunk完有多少id <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>多路召回和重排序是怎么提高检索成功率的 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>你之前向量检索加redis缓存是怎么做的？ redis健和值是什么？ <span style="color:var(--muted)">（1 次）</span></li>
-        
-      </ul>
-    </section>
-    
-    <section class="report" id="knowledge-3">
-      <h2 class="section-title">后端基础与工程化</h2>
-      <p style="color:var(--muted)">题目数 45 · 涉及公司 10 · 涉及面经 17</p>
-      <div class="chips" style="margin-bottom:14px">
-        
-        <span class="chip">京东</span>
-        
-        <span class="chip">字节</span>
-        
-        <span class="chip">快手</span>
-        
-        <span class="chip">淘天</span>
-        
-        <span class="chip">百度</span>
-        
-        <span class="chip">腾讯</span>
-        
-        <span class="chip">蔚来</span>
-        
-        <span class="chip">金山云</span>
-        
-        <span class="chip">阿里国际</span>
-        
-        <span class="chip">高德</span>
-        
-      </div>
-      <h3>代表题目</h3>
-      <ul>
-        
-        <li>了解redis集群吗？了解redis底层的存储逻辑吗？ <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>redis的性能单点能够有多少？集群能够有多少？ <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>我看你的黑马点评项目用的rabbitmq，为啥选这个？这个对比其他mq有什么特别的优势？（我说当时只学了这个，所以就用了，实际上rocketmq应该会更好） <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>Java 里的强引用、软引用、弱引用、虚引用在工程里怎么理解，别只背定义 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>本地部署要考虑什么？配置管理放在哪里？ <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>JMeter 压测的具体参数是怎么设置的？ <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>Redis 是单线程的，为什么它还能支持高并发？ <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>在实际业务场景中，你怎么判断什么时候需要加缓存？为什么不能只用 MySQL？ <span style="color:var(--muted)">（1 次）</span></li>
-        
-      </ul>
-    </section>
-    
-    <section class="report" id="knowledge-4">
-      <h2 class="section-title">框架、MCP与工具调用</h2>
-      <p style="color:var(--muted)">题目数 38 · 涉及公司 9 · 涉及面经 19</p>
-      <div class="chips" style="margin-bottom:14px">
-        
-        <span class="chip">字节</span>
-        
-        <span class="chip">小红书</span>
-        
-        <span class="chip">快手</span>
-        
-        <span class="chip">淘天</span>
-        
-        <span class="chip">米哈游</span>
-        
-        <span class="chip">腾讯</span>
-        
-        <span class="chip">蚂蚁</span>
-        
-        <span class="chip">金山云</span>
-        
-        <span class="chip">阿里国际</span>
-        
-      </div>
-      <h3>代表题目</h3>
-      <ul>
-        
-        <li>MCP、Function Calling、Skills、Agent 分别是什么，它们之间是什么关系 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>LangChain 和 LangGraph 如果要选，你更看重什么维度 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>MCP 和 CLI 工具接入在工程上分别解决什么问题，它们不是一回事 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>你的这个agent项目用了spring Ai Ailibaba，为什么用这个，他与langchain4j、spring ai有什么区别？选型的时候怎么考虑的？ <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>你用spring Ai Ailibaba的时候感觉有哪些比较好的点？哪些不太方便的点？ <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>介绍一下langchain和langgraph <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>skill是自己写的吗 ，互相之间可以联动吗？ <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>为什么不用skill-creator <span style="color:var(--muted)">（1 次）</span></li>
-        
-      </ul>
-    </section>
-    
-    <section class="report" id="knowledge-5">
-      <h2 class="section-title">记忆与上下文管理</h2>
-      <p style="color:var(--muted)">题目数 34 · 涉及公司 10 · 涉及面经 18</p>
-      <div class="chips" style="margin-bottom:14px">
-        
-        <span class="chip">字节</span>
-        
-        <span class="chip">小红书</span>
-        
-        <span class="chip">快手</span>
-        
-        <span class="chip">淘天</span>
-        
-        <span class="chip">百度</span>
-        
-        <span class="chip">米哈游</span>
-        
-        <span class="chip">腾讯</span>
-        
-        <span class="chip">蚂蚁</span>
-        
-        <span class="chip">阿里淘天</span>
-        
-        <span class="chip">阿里灵犀互娱</span>
-        
-      </div>
-      <h3>代表题目</h3>
-      <ul>
-        
-        <li>Agent 的记忆一般怎么分层，为什么不能只靠聊天历史 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>短期记忆和长期记忆应该如何精准提取，分别存什么内容更合理 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>做完rag后llm能理解图片里的内容吗，还是通过加入上下文token后靠文本理解 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>为什么要设计这三层记忆架构，是一个通用的设计还是参考了什么论文 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>新的记忆加到文件里 是直接append吗？ 覆盖？还是改写？ <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>记忆模块存在哪种介质上 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>跨会话通过压缩保留关键症状，这一块详细介绍 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>用户今天问A，三天后问B，怎么关联两次提问，记忆怎么跟用户维度绑定。（session级视角、没考虑并发和多次咨询隔 <span style="color:var(--muted)">（1 次）</span></li>
-        
-      </ul>
-    </section>
-    
-    <section class="report" id="knowledge-6">
-      <h2 class="section-title">算法与编码题</h2>
-      <p style="color:var(--muted)">题目数 22 · 涉及公司 7 · 涉及面经 17</p>
-      <div class="chips" style="margin-bottom:14px">
-        
-        <span class="chip">字节</span>
-        
-        <span class="chip">快手</span>
-        
-        <span class="chip">米哈游</span>
-        
-        <span class="chip">腾讯</span>
-        
-        <span class="chip">蔚来</span>
-        
-        <span class="chip">蚂蚁</span>
-        
-        <span class="chip">阿里国际</span>
-        
-      </div>
-      <h3>代表题目</h3>
-      <ul>
-        
-        <li>算法题 <span style="color:var(--muted)">（2 次）</span></li>
-        
-        <li>手撕合并k个升序链表（前几天pdd一面刚写完） <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>算法题口头说一下1200w的数据里，怎么找到中位数 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>字符串数字相减 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>字符串最长连续序列 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>手撕:一道原创题，大致题意:给定一个链表"head={4,2,8}和 一课二叉树 root=Rn{1,4,4,1,2,null,2,null,null,nul1,2,8,2,1,null,null,null,null,8,null,null}(貌似是这样的)判断一下这课树中存不存在一条路径和链表是一样的 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>如果对参数传入一个字符串类型，如何在方法内部修改它并把这个字符串的值传递出来? <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>代码实现LRU <span style="color:var(--muted)">（1 次）</span></li>
-        
-      </ul>
-    </section>
-    
-    <section class="report" id="knowledge-7">
-      <h2 class="section-title">评测、幻觉与数据集</h2>
-      <p style="color:var(--muted)">题目数 20 · 涉及公司 8 · 涉及面经 14</p>
-      <div class="chips" style="margin-bottom:14px">
-        
-        <span class="chip">京东</span>
-        
-        <span class="chip">字节</span>
-        
-        <span class="chip">淘天</span>
-        
-        <span class="chip">百度</span>
-        
-        <span class="chip">腾讯</span>
-        
-        <span class="chip">蚂蚁</span>
-        
-        <span class="chip">阿里云</span>
-        
-        <span class="chip">阿里灵犀互娱</span>
-        
-      </div>
-      <h3>代表题目</h3>
-      <ul>
-        
-        <li>AI 应用里的在线实验和传统 AB 测试有什么差别，为什么更难做 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>RAG 的效果你怎么评估，不能只说看用户反馈 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>幻觉问题你一般怎么处理，尤其是安全场景下的高风险幻觉 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>怎么解决幻觉问题 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>有没有评估过你的记忆架构，在没参考openclaw之前和之后的指标有什么变化，成功率有对比吗？ <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>你说你的文档准确率达到90%，具体做的改变是什么 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>你的数据集是怎么收集的，然后是怎么评估的呢？打分是谁在打分？人在打分 ，还是模型裁判员去打分？如果有很好用的模型裁判员，为什么不用裁判员模型 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>意图识别用的是哪个大模型？如何判断和测试意图识别结果的准确率？ <span style="color:var(--muted)">（1 次）</span></li>
-        
-      </ul>
-    </section>
-    
-    <section class="report" id="knowledge-8">
-      <h2 class="section-title">模型基础与推理机制</h2>
-      <p style="color:var(--muted)">题目数 17 · 涉及公司 6 · 涉及面经 11</p>
-      <div class="chips" style="margin-bottom:14px">
-        
-        <span class="chip">字节</span>
-        
-        <span class="chip">百度</span>
-        
-        <span class="chip">米哈游</span>
-        
-        <span class="chip">蚂蚁</span>
-        
-        <span class="chip">阿里云</span>
-        
-        <span class="chip">高德</span>
-        
-      </div>
-      <h3>代表题目</h3>
-      <ul>
-        
-        <li>平时你怎么利用大模型开发项目，而不是停留在写点 demo <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>介绍一下对temperature的理解 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>用过哪些模型，模型选择不是看排行榜的话，你一般怎么选 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>介绍一下KV cache <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>attention和self-attention <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>为什么attention比rnn好 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>LLM 的输入到底是什么？模型真正看到的内容包含哪些？ <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>self-attention 的核心作用是什么？为什么要拆成 Q、K、V？ <span style="color:var(--muted)">（1 次）</span></li>
-        
-      </ul>
-    </section>
-    
-    <section class="report" id="knowledge-9">
-      <h2 class="section-title">项目介绍与项目拷打</h2>
-      <p style="color:var(--muted)">题目数 14 · 涉及公司 10 · 涉及面经 12</p>
-      <div class="chips" style="margin-bottom:14px">
-        
-        <span class="chip">京东</span>
-        
-        <span class="chip">字节</span>
-        
-        <span class="chip">小红书</span>
-        
-        <span class="chip">快手</span>
-        
-        <span class="chip">淘天</span>
-        
-        <span class="chip">米哈游</span>
-        
-        <span class="chip">蚂蚁</span>
-        
-        <span class="chip">金山云</span>
-        
-        <span class="chip">阿里云</span>
-        
-        <span class="chip">高德</span>
-        
-      </div>
-      <h3>代表题目</h3>
-      <ul>
-        
-        <li>自我介绍 <span style="color:var(--muted)">（6 次）</span></li>
-        
-        <li>项目拷打 <span style="color:var(--muted)">（3 次）</span></li>
-        
-        <li>介绍你写的这个项目 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>做一下自我介绍 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>介绍一个你做的这个项目，重点讲架构和你负责的部分 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>做一下自我介绍，重点讲你在 AI 编码和跨端工程结合上的经历 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>你的AI项目的亮点是什么? <span style="color:var(--muted)">（1 次）</span></li>
-        
-      </ul>
-    </section>
-    
-    <section class="report" id="knowledge-10">
-      <h2 class="section-title">业务场景设计</h2>
-      <p style="color:var(--muted)">题目数 11 · 涉及公司 7 · 涉及面经 9</p>
-      <div class="chips" style="margin-bottom:14px">
-        
-        <span class="chip">京东</span>
-        
-        <span class="chip">字节</span>
-        
-        <span class="chip">快手</span>
-        
-        <span class="chip">腾讯</span>
-        
-        <span class="chip">阿里云</span>
-        
-        <span class="chip">阿里国际</span>
-        
-        <span class="chip">阿里灵犀互娱</span>
-        
-      </div>
-      <h3>代表题目</h3>
-      <ul>
-        
-        <li>你对网络安全方向怎么看，为什么 AI 应用在这个方向上既有价值又有风险 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>那为什么医院的问答项目里，不采用同样的实现 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>除了导购，你认为在电商领域（如京东）还有哪些场景可以用到 Agent？ <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>设计一个游戏智能客服，整机架构 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>设计一个游戏助手agent，记忆系统怎么设计 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>如何定义游戏角色状态 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>你未来想做什么业务 <span style="color:var(--muted)">（1 次）</span></li>
-        
-        <li>工具调用的安全控制是怎么实现的? <span style="color:var(--muted)">（1 次）</span></li>
-        
-      </ul>
-    </section>
-    
+        <section class="report" id="knowledge-nav">
+          <h2 class="section-title">知识点快速导航</h2>
+          <p style="color:var(--muted);margin-top:0">优先把高频知识点放在最前面。可以点击下面卡片进入，也可以直接点左侧目录树。</p>
+          <div class="knowledge-grid">
+            
+            <a class="knowledge-card" href="#knowledge-1">
+              <h3>Agent架构与范式</h3>
+              <p>题目数 66 · 涉及公司 13 · 涉及面经 25</p>
+              <ul>
+                
+                <li>#Agent面试会问什么？#</li>
+                
+                <li>为什么要做多 Agent，而不是把所有能力都塞进一个 Agent</li>
+                
+                <li>Agent 的规划、执行、反思三段式链路怎么设计</li>
+                
+              </ul>
+            </a>
+            
+            <a class="knowledge-card" href="#knowledge-2">
+              <h3>RAG与检索优化</h3>
+              <p>题目数 51 · 涉及公司 10 · 涉及面经 18</p>
+              <ul>
+                
+                <li>RAG 项目里怎么做召回闭环，才能让系统真的越用越准</li>
+                
+                <li>HyDE 的原理是什么，什么时候有效，什么时候会害人</li>
+                
+                <li>IVF、PQ、IVF-PQ 分别在做什么，为什么它们能把向量检索做快</li>
+                
+              </ul>
+            </a>
+            
+            <a class="knowledge-card" href="#knowledge-3">
+              <h3>后端基础与工程化</h3>
+              <p>题目数 45 · 涉及公司 10 · 涉及面经 17</p>
+              <ul>
+                
+                <li>了解redis集群吗？了解redis底层的存储逻辑吗？</li>
+                
+                <li>redis的性能单点能够有多少？集群能够有多少？</li>
+                
+                <li>我看你的黑马点评项目用的rabbitmq，为啥选这个？这个对比其他mq有什么特别的优势？（我说当时只学了这个，所以就用了，实际上rocketmq应该会更好）</li>
+                
+              </ul>
+            </a>
+            
+            <a class="knowledge-card" href="#knowledge-4">
+              <h3>框架、MCP与工具调用</h3>
+              <p>题目数 38 · 涉及公司 9 · 涉及面经 19</p>
+              <ul>
+                
+                <li>MCP、Function Calling、Skills、Agent 分别是什么，它们之间是什么关系</li>
+                
+                <li>LangChain 和 LangGraph 如果要选，你更看重什么维度</li>
+                
+                <li>MCP 和 CLI 工具接入在工程上分别解决什么问题，它们不是一回事</li>
+                
+              </ul>
+            </a>
+            
+            <a class="knowledge-card" href="#knowledge-5">
+              <h3>记忆与上下文管理</h3>
+              <p>题目数 34 · 涉及公司 10 · 涉及面经 18</p>
+              <ul>
+                
+                <li>Agent 的记忆一般怎么分层，为什么不能只靠聊天历史</li>
+                
+                <li>短期记忆和长期记忆应该如何精准提取，分别存什么内容更合理</li>
+                
+                <li>做完rag后llm能理解图片里的内容吗，还是通过加入上下文token后靠文本理解</li>
+                
+              </ul>
+            </a>
+            
+            <a class="knowledge-card" href="#knowledge-6">
+              <h3>算法与编码题</h3>
+              <p>题目数 22 · 涉及公司 7 · 涉及面经 17</p>
+              <ul>
+                
+                <li>算法题</li>
+                
+                <li>手撕合并k个升序链表（前几天pdd一面刚写完）</li>
+                
+                <li>算法题口头说一下1200w的数据里，怎么找到中位数</li>
+                
+              </ul>
+            </a>
+            
+            <a class="knowledge-card" href="#knowledge-7">
+              <h3>评测、幻觉与数据集</h3>
+              <p>题目数 20 · 涉及公司 8 · 涉及面经 14</p>
+              <ul>
+                
+                <li>AI 应用里的在线实验和传统 AB 测试有什么差别，为什么更难做</li>
+                
+                <li>RAG 的效果你怎么评估，不能只说看用户反馈</li>
+                
+                <li>幻觉问题你一般怎么处理，尤其是安全场景下的高风险幻觉</li>
+                
+              </ul>
+            </a>
+            
+            <a class="knowledge-card" href="#knowledge-8">
+              <h3>模型基础与推理机制</h3>
+              <p>题目数 17 · 涉及公司 6 · 涉及面经 11</p>
+              <ul>
+                
+                <li>平时你怎么利用大模型开发项目，而不是停留在写点 demo</li>
+                
+                <li>介绍一下对temperature的理解</li>
+                
+                <li>用过哪些模型，模型选择不是看排行榜的话，你一般怎么选</li>
+                
+              </ul>
+            </a>
+            
+            <a class="knowledge-card" href="#knowledge-9">
+              <h3>项目介绍与项目拷打</h3>
+              <p>题目数 14 · 涉及公司 10 · 涉及面经 12</p>
+              <ul>
+                
+                <li>自我介绍</li>
+                
+                <li>项目拷打</li>
+                
+                <li>介绍你写的这个项目</li>
+                
+              </ul>
+            </a>
+            
+            <a class="knowledge-card" href="#knowledge-10">
+              <h3>业务场景设计</h3>
+              <p>题目数 11 · 涉及公司 7 · 涉及面经 9</p>
+              <ul>
+                
+                <li>你对网络安全方向怎么看，为什么 AI 应用在这个方向上既有价值又有风险</li>
+                
+                <li>那为什么医院的问答项目里，不采用同样的实现</li>
+                
+                <li>除了导购，你认为在电商领域（如京东）还有哪些场景可以用到 Agent？</li>
+                
+              </ul>
+            </a>
+            
+          </div>
+        </section>
 
-    
-    <section class="report" id="report-1">
-      <h1 id="6ai">牛客近6个月AI应用开发面经汇总</h1>
+        
+        <section class="report" id="knowledge-1">
+          <h2 class="section-title">Agent架构与范式</h2>
+          <p style="color:var(--muted)">题目数 66 · 涉及公司 13 · 涉及面经 25</p>
+          <div class="chips" style="margin-bottom:14px">
+            
+            <span class="chip">京东</span>
+            
+            <span class="chip">字节</span>
+            
+            <span class="chip">小红书</span>
+            
+            <span class="chip">快手</span>
+            
+            <span class="chip">淘天</span>
+            
+            <span class="chip">百度</span>
+            
+            <span class="chip">米哈游</span>
+            
+            <span class="chip">腾讯</span>
+            
+            <span class="chip">蚂蚁</span>
+            
+            <span class="chip">阿里云</span>
+            
+            <span class="chip">阿里淘天</span>
+            
+            <span class="chip">阿里灵犀互娱</span>
+            
+          </div>
+          <h3>代表题目</h3>
+          <ul>
+            
+            <li>#Agent面试会问什么？# <span style="color:var(--muted)">（3 次）</span></li>
+            
+            <li>为什么要做多 Agent，而不是把所有能力都塞进一个 Agent <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>Agent 的规划、执行、反思三段式链路怎么设计 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>RAG 可以怎么分类，Agentic RAG 和传统 RAG 差别在哪 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>Agent 和传统 workflow 的本质区别是什么，什么时候该选 Agent，什么时候不该选 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>智能体开发范式有哪些，分别适合什么场景 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>智能体的记忆机制应该怎么设计，为什么“全都记住”反而是坏事 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>设计智能体时，稳定性和安全性应该优先在哪些层面做约束 <span style="color:var(--muted)">（1 次）</span></li>
+            
+          </ul>
+        </section>
+        
+        <section class="report" id="knowledge-2">
+          <h2 class="section-title">RAG与检索优化</h2>
+          <p style="color:var(--muted)">题目数 51 · 涉及公司 10 · 涉及面经 18</p>
+          <div class="chips" style="margin-bottom:14px">
+            
+            <span class="chip">京东</span>
+            
+            <span class="chip">字节</span>
+            
+            <span class="chip">小红书</span>
+            
+            <span class="chip">快手</span>
+            
+            <span class="chip">淘天</span>
+            
+            <span class="chip">腾讯</span>
+            
+            <span class="chip">蔚来</span>
+            
+            <span class="chip">蚂蚁</span>
+            
+            <span class="chip">金山云</span>
+            
+            <span class="chip">阿里云</span>
+            
+          </div>
+          <h3>代表题目</h3>
+          <ul>
+            
+            <li>RAG 项目里怎么做召回闭环，才能让系统真的越用越准 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>HyDE 的原理是什么，什么时候有效，什么时候会害人 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>IVF、PQ、IVF-PQ 分别在做什么，为什么它们能把向量检索做快 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>向量索引有哪些典型类别，分别适合什么场景 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>为什么要用 RAG，而不是直接让模型回答安全分析问题 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>文档chunk完有多少id <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>多路召回和重排序是怎么提高检索成功率的 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>你之前向量检索加redis缓存是怎么做的？ redis健和值是什么？ <span style="color:var(--muted)">（1 次）</span></li>
+            
+          </ul>
+        </section>
+        
+        <section class="report" id="knowledge-3">
+          <h2 class="section-title">后端基础与工程化</h2>
+          <p style="color:var(--muted)">题目数 45 · 涉及公司 10 · 涉及面经 17</p>
+          <div class="chips" style="margin-bottom:14px">
+            
+            <span class="chip">京东</span>
+            
+            <span class="chip">字节</span>
+            
+            <span class="chip">快手</span>
+            
+            <span class="chip">淘天</span>
+            
+            <span class="chip">百度</span>
+            
+            <span class="chip">腾讯</span>
+            
+            <span class="chip">蔚来</span>
+            
+            <span class="chip">金山云</span>
+            
+            <span class="chip">阿里国际</span>
+            
+            <span class="chip">高德</span>
+            
+          </div>
+          <h3>代表题目</h3>
+          <ul>
+            
+            <li>了解redis集群吗？了解redis底层的存储逻辑吗？ <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>redis的性能单点能够有多少？集群能够有多少？ <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>我看你的黑马点评项目用的rabbitmq，为啥选这个？这个对比其他mq有什么特别的优势？（我说当时只学了这个，所以就用了，实际上rocketmq应该会更好） <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>Java 里的强引用、软引用、弱引用、虚引用在工程里怎么理解，别只背定义 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>本地部署要考虑什么？配置管理放在哪里？ <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>JMeter 压测的具体参数是怎么设置的？ <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>Redis 是单线程的，为什么它还能支持高并发？ <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>在实际业务场景中，你怎么判断什么时候需要加缓存？为什么不能只用 MySQL？ <span style="color:var(--muted)">（1 次）</span></li>
+            
+          </ul>
+        </section>
+        
+        <section class="report" id="knowledge-4">
+          <h2 class="section-title">框架、MCP与工具调用</h2>
+          <p style="color:var(--muted)">题目数 38 · 涉及公司 9 · 涉及面经 19</p>
+          <div class="chips" style="margin-bottom:14px">
+            
+            <span class="chip">字节</span>
+            
+            <span class="chip">小红书</span>
+            
+            <span class="chip">快手</span>
+            
+            <span class="chip">淘天</span>
+            
+            <span class="chip">米哈游</span>
+            
+            <span class="chip">腾讯</span>
+            
+            <span class="chip">蚂蚁</span>
+            
+            <span class="chip">金山云</span>
+            
+            <span class="chip">阿里国际</span>
+            
+          </div>
+          <h3>代表题目</h3>
+          <ul>
+            
+            <li>MCP、Function Calling、Skills、Agent 分别是什么，它们之间是什么关系 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>LangChain 和 LangGraph 如果要选，你更看重什么维度 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>MCP 和 CLI 工具接入在工程上分别解决什么问题，它们不是一回事 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>你的这个agent项目用了spring Ai Ailibaba，为什么用这个，他与langchain4j、spring ai有什么区别？选型的时候怎么考虑的？ <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>你用spring Ai Ailibaba的时候感觉有哪些比较好的点？哪些不太方便的点？ <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>介绍一下langchain和langgraph <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>skill是自己写的吗 ，互相之间可以联动吗？ <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>为什么不用skill-creator <span style="color:var(--muted)">（1 次）</span></li>
+            
+          </ul>
+        </section>
+        
+        <section class="report" id="knowledge-5">
+          <h2 class="section-title">记忆与上下文管理</h2>
+          <p style="color:var(--muted)">题目数 34 · 涉及公司 10 · 涉及面经 18</p>
+          <div class="chips" style="margin-bottom:14px">
+            
+            <span class="chip">字节</span>
+            
+            <span class="chip">小红书</span>
+            
+            <span class="chip">快手</span>
+            
+            <span class="chip">淘天</span>
+            
+            <span class="chip">百度</span>
+            
+            <span class="chip">米哈游</span>
+            
+            <span class="chip">腾讯</span>
+            
+            <span class="chip">蚂蚁</span>
+            
+            <span class="chip">阿里淘天</span>
+            
+            <span class="chip">阿里灵犀互娱</span>
+            
+          </div>
+          <h3>代表题目</h3>
+          <ul>
+            
+            <li>Agent 的记忆一般怎么分层，为什么不能只靠聊天历史 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>短期记忆和长期记忆应该如何精准提取，分别存什么内容更合理 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>做完rag后llm能理解图片里的内容吗，还是通过加入上下文token后靠文本理解 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>为什么要设计这三层记忆架构，是一个通用的设计还是参考了什么论文 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>新的记忆加到文件里 是直接append吗？ 覆盖？还是改写？ <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>记忆模块存在哪种介质上 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>跨会话通过压缩保留关键症状，这一块详细介绍 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>用户今天问A，三天后问B，怎么关联两次提问，记忆怎么跟用户维度绑定。（session级视角、没考虑并发和多次咨询隔 <span style="color:var(--muted)">（1 次）</span></li>
+            
+          </ul>
+        </section>
+        
+        <section class="report" id="knowledge-6">
+          <h2 class="section-title">算法与编码题</h2>
+          <p style="color:var(--muted)">题目数 22 · 涉及公司 7 · 涉及面经 17</p>
+          <div class="chips" style="margin-bottom:14px">
+            
+            <span class="chip">字节</span>
+            
+            <span class="chip">快手</span>
+            
+            <span class="chip">米哈游</span>
+            
+            <span class="chip">腾讯</span>
+            
+            <span class="chip">蔚来</span>
+            
+            <span class="chip">蚂蚁</span>
+            
+            <span class="chip">阿里国际</span>
+            
+          </div>
+          <h3>代表题目</h3>
+          <ul>
+            
+            <li>算法题 <span style="color:var(--muted)">（2 次）</span></li>
+            
+            <li>手撕合并k个升序链表（前几天pdd一面刚写完） <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>算法题口头说一下1200w的数据里，怎么找到中位数 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>字符串数字相减 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>字符串最长连续序列 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>手撕:一道原创题，大致题意:给定一个链表"head={4,2,8}和 一课二叉树 root=Rn{1,4,4,1,2,null,2,null,null,nul1,2,8,2,1,null,null,null,null,8,null,null}(貌似是这样的)判断一下这课树中存不存在一条路径和链表是一样的 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>如果对参数传入一个字符串类型，如何在方法内部修改它并把这个字符串的值传递出来? <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>代码实现LRU <span style="color:var(--muted)">（1 次）</span></li>
+            
+          </ul>
+        </section>
+        
+        <section class="report" id="knowledge-7">
+          <h2 class="section-title">评测、幻觉与数据集</h2>
+          <p style="color:var(--muted)">题目数 20 · 涉及公司 8 · 涉及面经 14</p>
+          <div class="chips" style="margin-bottom:14px">
+            
+            <span class="chip">京东</span>
+            
+            <span class="chip">字节</span>
+            
+            <span class="chip">淘天</span>
+            
+            <span class="chip">百度</span>
+            
+            <span class="chip">腾讯</span>
+            
+            <span class="chip">蚂蚁</span>
+            
+            <span class="chip">阿里云</span>
+            
+            <span class="chip">阿里灵犀互娱</span>
+            
+          </div>
+          <h3>代表题目</h3>
+          <ul>
+            
+            <li>AI 应用里的在线实验和传统 AB 测试有什么差别，为什么更难做 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>RAG 的效果你怎么评估，不能只说看用户反馈 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>幻觉问题你一般怎么处理，尤其是安全场景下的高风险幻觉 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>怎么解决幻觉问题 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>有没有评估过你的记忆架构，在没参考openclaw之前和之后的指标有什么变化，成功率有对比吗？ <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>你说你的文档准确率达到90%，具体做的改变是什么 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>你的数据集是怎么收集的，然后是怎么评估的呢？打分是谁在打分？人在打分 ，还是模型裁判员去打分？如果有很好用的模型裁判员，为什么不用裁判员模型 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>意图识别用的是哪个大模型？如何判断和测试意图识别结果的准确率？ <span style="color:var(--muted)">（1 次）</span></li>
+            
+          </ul>
+        </section>
+        
+        <section class="report" id="knowledge-8">
+          <h2 class="section-title">模型基础与推理机制</h2>
+          <p style="color:var(--muted)">题目数 17 · 涉及公司 6 · 涉及面经 11</p>
+          <div class="chips" style="margin-bottom:14px">
+            
+            <span class="chip">字节</span>
+            
+            <span class="chip">百度</span>
+            
+            <span class="chip">米哈游</span>
+            
+            <span class="chip">蚂蚁</span>
+            
+            <span class="chip">阿里云</span>
+            
+            <span class="chip">高德</span>
+            
+          </div>
+          <h3>代表题目</h3>
+          <ul>
+            
+            <li>平时你怎么利用大模型开发项目，而不是停留在写点 demo <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>介绍一下对temperature的理解 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>用过哪些模型，模型选择不是看排行榜的话，你一般怎么选 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>介绍一下KV cache <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>attention和self-attention <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>为什么attention比rnn好 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>LLM 的输入到底是什么？模型真正看到的内容包含哪些？ <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>self-attention 的核心作用是什么？为什么要拆成 Q、K、V？ <span style="color:var(--muted)">（1 次）</span></li>
+            
+          </ul>
+        </section>
+        
+        <section class="report" id="knowledge-9">
+          <h2 class="section-title">项目介绍与项目拷打</h2>
+          <p style="color:var(--muted)">题目数 14 · 涉及公司 10 · 涉及面经 12</p>
+          <div class="chips" style="margin-bottom:14px">
+            
+            <span class="chip">京东</span>
+            
+            <span class="chip">字节</span>
+            
+            <span class="chip">小红书</span>
+            
+            <span class="chip">快手</span>
+            
+            <span class="chip">淘天</span>
+            
+            <span class="chip">米哈游</span>
+            
+            <span class="chip">蚂蚁</span>
+            
+            <span class="chip">金山云</span>
+            
+            <span class="chip">阿里云</span>
+            
+            <span class="chip">高德</span>
+            
+          </div>
+          <h3>代表题目</h3>
+          <ul>
+            
+            <li>自我介绍 <span style="color:var(--muted)">（6 次）</span></li>
+            
+            <li>项目拷打 <span style="color:var(--muted)">（3 次）</span></li>
+            
+            <li>介绍你写的这个项目 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>做一下自我介绍 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>介绍一个你做的这个项目，重点讲架构和你负责的部分 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>做一下自我介绍，重点讲你在 AI 编码和跨端工程结合上的经历 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>你的AI项目的亮点是什么? <span style="color:var(--muted)">（1 次）</span></li>
+            
+          </ul>
+        </section>
+        
+        <section class="report" id="knowledge-10">
+          <h2 class="section-title">业务场景设计</h2>
+          <p style="color:var(--muted)">题目数 11 · 涉及公司 7 · 涉及面经 9</p>
+          <div class="chips" style="margin-bottom:14px">
+            
+            <span class="chip">京东</span>
+            
+            <span class="chip">字节</span>
+            
+            <span class="chip">快手</span>
+            
+            <span class="chip">腾讯</span>
+            
+            <span class="chip">阿里云</span>
+            
+            <span class="chip">阿里国际</span>
+            
+            <span class="chip">阿里灵犀互娱</span>
+            
+          </div>
+          <h3>代表题目</h3>
+          <ul>
+            
+            <li>你对网络安全方向怎么看，为什么 AI 应用在这个方向上既有价值又有风险 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>那为什么医院的问答项目里，不采用同样的实现 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>除了导购，你认为在电商领域（如京东）还有哪些场景可以用到 Agent？ <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>设计一个游戏智能客服，整机架构 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>设计一个游戏助手agent，记忆系统怎么设计 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>如何定义游戏角色状态 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>你未来想做什么业务 <span style="color:var(--muted)">（1 次）</span></li>
+            
+            <li>工具调用的安全控制是怎么实现的? <span style="color:var(--muted)">（1 次）</span></li>
+            
+          </ul>
+        </section>
+        
+
+        
+        <section class="report" id="report-1">
+          <h1 id="6ai">牛客近6个月AI应用开发面经汇总</h1>
 <ul>
 <li>生成时间：2026-04-12 17:17:22</li>
 <li>统计窗口：2025-10-11 ～ 2026-04-12</li>
@@ -2635,10 +2669,10 @@
 <li>None｜505159fb5f874d909c0c252f3f959ea0｜抓取失败: window.<strong>INITIAL_STATE</strong> not found｜https://www.nowcoder.com/feed/main/detail/505159fb5f874d909c0c252f3f959ea0</li>
 <li>None｜0733c5af82ff4bc8aaa1ddd45ae041b0｜抓取失败: window.<strong>INITIAL_STATE</strong> not found｜https://www.nowcoder.com/feed/main/detail/0733c5af82ff4bc8aaa1ddd45ae041b0</li>
 </ul>
-    </section>
-    
-    <section class="report" id="report-2">
-      <h1 id="6ai">牛客近6个月AI应用开发面经：知识点聚类</h1>
+        </section>
+        
+        <section class="report" id="report-2">
+          <h1 id="6ai">牛客近6个月AI应用开发面经：知识点聚类</h1>
 <ul>
 <li>面经样本数：32</li>
 <li>提取题目数：464</li>
@@ -2928,10 +2962,10 @@
 <li>(1) 其实就是模型通过路径去读这些文件是吧，那如果两个人登了同一个账号，在同一时刻，这个文件会被两个不同的用户使用，在这个情况下，你们的系统如何处理？怎么解决这个问题？ —— 字节</li>
 <li>(1) 讲一下transfromer架构 —— 字节</li>
 </ul>
-    </section>
-    
-    <section class="report" id="report-3">
-      <h1 id="6ai">牛客近6个月AI应用开发面经：高频题题库与答案框架</h1>
+        </section>
+        
+        <section class="report" id="report-3">
+          <h1 id="6ai">牛客近6个月AI应用开发面经：高频题题库与答案框架</h1>
 <ul>
 <li>面经样本数：32</li>
 <li>高频主题数：14</li>
@@ -3284,10 +3318,10 @@
 <li>强调兜底：低置信度回退到澄清问句或保守策略。</li>
 <li>如果业务复杂，要补“多意图/歧义 query 如何处理”。</li>
 </ul>
-    </section>
-    
-    <section class="report" id="report-4">
-      <h1 id="6ai">牛客近6个月AI应用开发面经：公司维度对比分析</h1>
+        </section>
+        
+        <section class="report" id="report-4">
+          <h1 id="6ai">牛客近6个月AI应用开发面经：公司维度对比分析</h1>
 <ul>
 <li>统计公司数：16</li>
 </ul>
@@ -3726,314 +3760,316 @@
 <li>相关面经：</li>
 <li>2026-04-09｜<a href="https://www.nowcoder.com/feed/main/detail/5af31c8afe254a00a69a6c0141e6908a">蔚来 AI应用开发 暑期一面分享</a></li>
 </ul>
-    </section>
-    
+        </section>
+        
 
-    <section class="report" id="latest">
-      <h2 class="section-title">附录：最新面经列表</h2>
-      <p style="color:var(--muted);margin-top:0">具体面经条目放在附录区，优先级低于前面的知识点导航、聚类和题库。</p>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr><th>日期</th><th>公司</th><th>岗位</th><th>轮次</th><th>标题</th><th>原帖</th></tr>
-          </thead>
-          <tbody>
-            
-            <tr data-search-row="2026-04-12 阿里云 ai应用开发 一面 阿里云 AI应用开发 一面">
-              <td>2026-04-12</td>
-              <td>阿里云</td>
-              <td>ai应用开发</td>
-              <td>一面</td>
-              <td>阿里云 AI应用开发 一面</td>
-              <td><a href="https://www.nowcoder.com/discuss/872810222128021504" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-12 淘天 ai应用开发 二面 淘天 AI应用开发 二面">
-              <td>2026-04-12</td>
-              <td>淘天</td>
-              <td>ai应用开发</td>
-              <td>二面</td>
-              <td>淘天 AI应用开发 二面</td>
-              <td><a href="https://www.nowcoder.com/discuss/872816572199464960" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-12 小红书 ai agent开发 一面 小红书 AI Agent开发 一面">
-              <td>2026-04-12</td>
-              <td>小红书</td>
-              <td>ai agent开发</td>
-              <td>一面</td>
-              <td>小红书 AI Agent开发 一面</td>
-              <td><a href="https://www.nowcoder.com/discuss/872820735335485440" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-11 快手 ai应用服务端开发 二面 快手ai应用服务端开发 二面">
-              <td>2026-04-11</td>
-              <td>快手</td>
-              <td>ai应用服务端开发</td>
-              <td>二面</td>
-              <td>快手ai应用服务端开发 二面</td>
-              <td><a href="https://www.nowcoder.com/discuss/872512773710696448" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-10 高德 ai应用开发 一面 高德 AI应用开发 一面">
-              <td>2026-04-10</td>
-              <td>高德</td>
-              <td>ai应用开发</td>
-              <td>一面</td>
-              <td>高德 AI应用开发 一面</td>
-              <td><a href="https://www.nowcoder.com/discuss/872229606252675072" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-10 阿里灵犀互娱 ai应用开发 二面 阿里灵犀互娱AI应用开发暑期二面">
-              <td>2026-04-10</td>
-              <td>阿里灵犀互娱</td>
-              <td>ai应用开发</td>
-              <td>二面</td>
-              <td>阿里灵犀互娱AI应用开发暑期二面</td>
-              <td><a href="https://www.nowcoder.com/feed/main/detail/3dbec664147348d685f3e2b8b50288f8" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-10 阿里国际 ai应用开发 一面 阿里国际AI应用开发暑期一面 1h">
-              <td>2026-04-10</td>
-              <td>阿里国际</td>
-              <td>ai应用开发</td>
-              <td>一面</td>
-              <td>阿里国际AI应用开发暑期一面 1h</td>
-              <td><a href="https://www.nowcoder.com/feed/main/detail/580e5a35eddb47e0851952165004f233" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-10 蚂蚁 agent开发 未明确 蚂蚁金融Agent开发暑期面经分享">
-              <td>2026-04-10</td>
-              <td>蚂蚁</td>
-              <td>agent开发</td>
-              <td>未明确</td>
-              <td>蚂蚁金融Agent开发暑期面经分享</td>
-              <td><a href="https://www.nowcoder.com/feed/main/detail/1f90384e8ff54172b65b50d853b00da0" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-10 腾讯 ai应用开发 未明确 腾讯 AI应用开发面经">
-              <td>2026-04-10</td>
-              <td>腾讯</td>
-              <td>ai应用开发</td>
-              <td>未明确</td>
-              <td>腾讯 AI应用开发面经</td>
-              <td><a href="https://www.nowcoder.com/feed/main/detail/acd3e53eecbc405296335edae4d5cf88" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-10 淘天 ai应用开发 一面 淘天AI应用开发 agent岗一面 好难">
-              <td>2026-04-10</td>
-              <td>淘天</td>
-              <td>ai应用开发</td>
-              <td>一面</td>
-              <td>淘天AI应用开发 agent岗一面 好难</td>
-              <td><a href="https://www.nowcoder.com/feed/main/detail/a0306a045d594b02b63fb0654d517901" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-10 快手 ai agent开发 二面 快手 AI agent开发二面分享 1h">
-              <td>2026-04-10</td>
-              <td>快手</td>
-              <td>ai agent开发</td>
-              <td>二面</td>
-              <td>快手 AI agent开发二面分享 1h</td>
-              <td><a href="https://www.nowcoder.com/feed/main/detail/afa98a916503444aa708fcfffb263d38" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-10 字节 ai应用开发 未明确 字节 剪映 ai应用开发">
-              <td>2026-04-10</td>
-              <td>字节</td>
-              <td>ai应用开发</td>
-              <td>未明确</td>
-              <td>字节 剪映 ai应用开发</td>
-              <td><a href="https://www.nowcoder.com/feed/main/detail/2e53f0ec451a4e71b2e3418252071ba4" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-10 京东 agent开发 二面 27暑期实习-京东Agent开发二面分享">
-              <td>2026-04-10</td>
-              <td>京东</td>
-              <td>agent开发</td>
-              <td>二面</td>
-              <td>27暑期实习-京东Agent开发二面分享</td>
-              <td><a href="https://www.nowcoder.com/feed/main/detail/6af1c8611e434bbe8ba9cfa2bd0eaf18" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-10 金山云 ai应用平台开发 一面 27届-日常实习-金山云-AI应用平台开发-一面">
-              <td>2026-04-10</td>
-              <td>金山云</td>
-              <td>ai应用平台开发</td>
-              <td>一面</td>
-              <td>27届-日常实习-金山云-AI应用平台开发-一面</td>
-              <td><a href="https://www.nowcoder.com/discuss/872055401926164480" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-09 阿里淘天 ai应用开发 一面 阿里淘天 AI应用开发 暑期实习一面">
-              <td>2026-04-09</td>
-              <td>阿里淘天</td>
-              <td>ai应用开发</td>
-              <td>一面</td>
-              <td>阿里淘天 AI应用开发 暑期实习一面</td>
-              <td><a href="https://www.nowcoder.com/feed/main/detail/39627b379e8e46ce9cb3a3b8eae46959" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-09 阿里国际 ai应用开发 二面 阿里国际AI应用开发二面">
-              <td>2026-04-09</td>
-              <td>阿里国际</td>
-              <td>ai应用开发</td>
-              <td>二面</td>
-              <td>阿里国际AI应用开发二面</td>
-              <td><a href="https://www.nowcoder.com/feed/main/detail/c2772ead209549a0bb6e54f2df205a31" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-09 蔚来 ai应用开发 一面 蔚来 AI应用开发 暑期一面分享">
-              <td>2026-04-09</td>
-              <td>蔚来</td>
-              <td>ai应用开发</td>
-              <td>一面</td>
-              <td>蔚来 AI应用开发 暑期一面分享</td>
-              <td><a href="https://www.nowcoder.com/feed/main/detail/5af31c8afe254a00a69a6c0141e6908a" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-09 腾讯 ai agent开发 一面 腾讯暑期实习 ai agent开发一面">
-              <td>2026-04-09</td>
-              <td>腾讯</td>
-              <td>ai agent开发</td>
-              <td>一面</td>
-              <td>腾讯暑期实习 ai agent开发一面</td>
-              <td><a href="https://www.nowcoder.com/feed/main/detail/497e14617f01453db84dfbc264e5751e" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-09 腾讯 ai应用开发 一面 腾讯日常实习一面-AI应用开发 1h">
-              <td>2026-04-09</td>
-              <td>腾讯</td>
-              <td>ai应用开发</td>
-              <td>一面</td>
-              <td>腾讯日常实习一面-AI应用开发 1h</td>
-              <td><a href="https://www.nowcoder.com/feed/main/detail/37e847fa267b4c3898b38e2952b5286e" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-09 米哈游 ai agent研发 一面 米哈游-AI Agent研发-暑期一面">
-              <td>2026-04-09</td>
-              <td>米哈游</td>
-              <td>ai agent研发</td>
-              <td>一面</td>
-              <td>米哈游-AI Agent研发-暑期一面</td>
-              <td><a href="https://www.nowcoder.com/feed/main/detail/a1566acc2660477dbf54b58885513d6c" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-09 百度 ai agent开发 一面 百度ai agent开发春招一面">
-              <td>2026-04-09</td>
-              <td>百度</td>
-              <td>ai agent开发</td>
-              <td>一面</td>
-              <td>百度ai agent开发春招一面</td>
-              <td><a href="https://www.nowcoder.com/feed/main/detail/c807140b75bd4cf3bf4166660676db5d" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-09 快手 ai agent开发 一面 快手AI Agent开发一面（已过）">
-              <td>2026-04-09</td>
-              <td>快手</td>
-              <td>ai agent开发</td>
-              <td>一面</td>
-              <td>快手AI Agent开发一面（已过）</td>
-              <td><a href="https://www.nowcoder.com/feed/main/detail/7ce89f19368b46da853c718f2ae2f53c" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-09 字节 agent开发 一面 字节agent开发实习一面凉经">
-              <td>2026-04-09</td>
-              <td>字节</td>
-              <td>agent开发</td>
-              <td>一面</td>
-              <td>字节agent开发实习一面凉经</td>
-              <td><a href="https://www.nowcoder.com/feed/main/detail/69b9cd21f1244d3cb19499f249228b50" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-09 字节 agent开发 一面 字节Agent开发一面90min凉经">
-              <td>2026-04-09</td>
-              <td>字节</td>
-              <td>agent开发</td>
-              <td>一面</td>
-              <td>字节Agent开发一面90min凉经</td>
-              <td><a href="https://www.nowcoder.com/feed/main/detail/91c5394e57c14927841d7a86bfe427c2" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-09 淘天 ai agent开发 二面 4.9-淘天agent-二面">
-              <td>2026-04-09</td>
-              <td>淘天</td>
-              <td>ai agent开发</td>
-              <td>二面</td>
-              <td>4.9-淘天agent-二面</td>
-              <td><a href="https://www.nowcoder.com/discuss/871774510138023936" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-08 快手 大模型数据应用开发 一面 实习-快手电商-大模型数据应用开发一面">
-              <td>2026-04-08</td>
-              <td>快手</td>
-              <td>大模型数据应用开发</td>
-              <td>一面</td>
-              <td>实习-快手电商-大模型数据应用开发一面</td>
-              <td><a href="https://www.nowcoder.com/discuss/871506086656761856" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-08 字节 ai应用开发 未明确 字节AI应用开发实习面经分享">
-              <td>2026-04-08</td>
-              <td>字节</td>
-              <td>ai应用开发</td>
-              <td>未明确</td>
-              <td>字节AI应用开发实习面经分享</td>
-              <td><a href="https://www.nowcoder.com/feed/main/detail/76448605da6e4aee99a394da83d1718f" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-08 字节 ai应用开发 二面 AI应用开发日常实习二面-字节">
-              <td>2026-04-08</td>
-              <td>字节</td>
-              <td>ai应用开发</td>
-              <td>二面</td>
-              <td>AI应用开发日常实习二面-字节</td>
-              <td><a href="https://www.nowcoder.com/feed/main/detail/0607316a2492400896408c95e10951e0" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-05 蚂蚁 ai应用开发 二面 蚂蚁ai应用开发实习二面">
-              <td>2026-04-05</td>
-              <td>蚂蚁</td>
-              <td>ai应用开发</td>
-              <td>二面</td>
-              <td>蚂蚁ai应用开发实习二面</td>
-              <td><a href="https://www.nowcoder.com/feed/main/detail/718c5a06a65645d7a462a56b457cb35e" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-03 淘天 ai应用开发 一面 淘天-ai应用开发-一面">
-              <td>2026-04-03</td>
-              <td>淘天</td>
-              <td>ai应用开发</td>
-              <td>一面</td>
-              <td>淘天-ai应用开发-一面</td>
-              <td><a href="https://www.nowcoder.com/feed/main/detail/076a8d1acaae4795a28d4a5370872bd6" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-04-02 字节 ai应用开发 一面 字节 ai应用开发">
-              <td>2026-04-02</td>
-              <td>字节</td>
-              <td>ai应用开发</td>
-              <td>一面</td>
-              <td>字节 ai应用开发</td>
-              <td><a href="https://www.nowcoder.com/feed/main/detail/c5947496fc29440883611173478dc257" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-            <tr data-search-row="2026-03-21 字节 大模型应用开发 二面 字节 大模型应用开发 二面 日常实习">
-              <td>2026-03-21</td>
-              <td>字节</td>
-              <td>大模型应用开发</td>
-              <td>二面</td>
-              <td>字节 大模型应用开发 二面 日常实习</td>
-              <td><a href="https://www.nowcoder.com/feed/main/detail/30b6f37830414df5a32d851f2004df7a" target="_blank" rel="noreferrer">查看原帖</a></td>
-            </tr>
-            
-          </tbody>
-        </table>
-      </div>
-    </section>
+        <section class="report" id="latest">
+          <h2 class="section-title">附录：最新面经列表</h2>
+          <p style="color:var(--muted);margin-top:0">具体面经条目放在附录区，优先级低于前面的知识点导航、聚类和题库。</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>日期</th><th>公司</th><th>岗位</th><th>轮次</th><th>标题</th><th>原帖</th></tr>
+              </thead>
+              <tbody>
+                
+                <tr data-search-row="2026-04-12 阿里云 ai应用开发 一面 阿里云 AI应用开发 一面">
+                  <td>2026-04-12</td>
+                  <td>阿里云</td>
+                  <td>ai应用开发</td>
+                  <td>一面</td>
+                  <td>阿里云 AI应用开发 一面</td>
+                  <td><a href="https://www.nowcoder.com/discuss/872810222128021504" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-12 淘天 ai应用开发 二面 淘天 AI应用开发 二面">
+                  <td>2026-04-12</td>
+                  <td>淘天</td>
+                  <td>ai应用开发</td>
+                  <td>二面</td>
+                  <td>淘天 AI应用开发 二面</td>
+                  <td><a href="https://www.nowcoder.com/discuss/872816572199464960" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-12 小红书 ai agent开发 一面 小红书 AI Agent开发 一面">
+                  <td>2026-04-12</td>
+                  <td>小红书</td>
+                  <td>ai agent开发</td>
+                  <td>一面</td>
+                  <td>小红书 AI Agent开发 一面</td>
+                  <td><a href="https://www.nowcoder.com/discuss/872820735335485440" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-11 快手 ai应用服务端开发 二面 快手ai应用服务端开发 二面">
+                  <td>2026-04-11</td>
+                  <td>快手</td>
+                  <td>ai应用服务端开发</td>
+                  <td>二面</td>
+                  <td>快手ai应用服务端开发 二面</td>
+                  <td><a href="https://www.nowcoder.com/discuss/872512773710696448" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-10 高德 ai应用开发 一面 高德 AI应用开发 一面">
+                  <td>2026-04-10</td>
+                  <td>高德</td>
+                  <td>ai应用开发</td>
+                  <td>一面</td>
+                  <td>高德 AI应用开发 一面</td>
+                  <td><a href="https://www.nowcoder.com/discuss/872229606252675072" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-10 阿里灵犀互娱 ai应用开发 二面 阿里灵犀互娱AI应用开发暑期二面">
+                  <td>2026-04-10</td>
+                  <td>阿里灵犀互娱</td>
+                  <td>ai应用开发</td>
+                  <td>二面</td>
+                  <td>阿里灵犀互娱AI应用开发暑期二面</td>
+                  <td><a href="https://www.nowcoder.com/feed/main/detail/3dbec664147348d685f3e2b8b50288f8" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-10 阿里国际 ai应用开发 一面 阿里国际AI应用开发暑期一面 1h">
+                  <td>2026-04-10</td>
+                  <td>阿里国际</td>
+                  <td>ai应用开发</td>
+                  <td>一面</td>
+                  <td>阿里国际AI应用开发暑期一面 1h</td>
+                  <td><a href="https://www.nowcoder.com/feed/main/detail/580e5a35eddb47e0851952165004f233" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-10 蚂蚁 agent开发 未明确 蚂蚁金融Agent开发暑期面经分享">
+                  <td>2026-04-10</td>
+                  <td>蚂蚁</td>
+                  <td>agent开发</td>
+                  <td>未明确</td>
+                  <td>蚂蚁金融Agent开发暑期面经分享</td>
+                  <td><a href="https://www.nowcoder.com/feed/main/detail/1f90384e8ff54172b65b50d853b00da0" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-10 腾讯 ai应用开发 未明确 腾讯 AI应用开发面经">
+                  <td>2026-04-10</td>
+                  <td>腾讯</td>
+                  <td>ai应用开发</td>
+                  <td>未明确</td>
+                  <td>腾讯 AI应用开发面经</td>
+                  <td><a href="https://www.nowcoder.com/feed/main/detail/acd3e53eecbc405296335edae4d5cf88" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-10 淘天 ai应用开发 一面 淘天AI应用开发 agent岗一面 好难">
+                  <td>2026-04-10</td>
+                  <td>淘天</td>
+                  <td>ai应用开发</td>
+                  <td>一面</td>
+                  <td>淘天AI应用开发 agent岗一面 好难</td>
+                  <td><a href="https://www.nowcoder.com/feed/main/detail/a0306a045d594b02b63fb0654d517901" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-10 快手 ai agent开发 二面 快手 AI agent开发二面分享 1h">
+                  <td>2026-04-10</td>
+                  <td>快手</td>
+                  <td>ai agent开发</td>
+                  <td>二面</td>
+                  <td>快手 AI agent开发二面分享 1h</td>
+                  <td><a href="https://www.nowcoder.com/feed/main/detail/afa98a916503444aa708fcfffb263d38" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-10 字节 ai应用开发 未明确 字节 剪映 ai应用开发">
+                  <td>2026-04-10</td>
+                  <td>字节</td>
+                  <td>ai应用开发</td>
+                  <td>未明确</td>
+                  <td>字节 剪映 ai应用开发</td>
+                  <td><a href="https://www.nowcoder.com/feed/main/detail/2e53f0ec451a4e71b2e3418252071ba4" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-10 京东 agent开发 二面 27暑期实习-京东Agent开发二面分享">
+                  <td>2026-04-10</td>
+                  <td>京东</td>
+                  <td>agent开发</td>
+                  <td>二面</td>
+                  <td>27暑期实习-京东Agent开发二面分享</td>
+                  <td><a href="https://www.nowcoder.com/feed/main/detail/6af1c8611e434bbe8ba9cfa2bd0eaf18" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-10 金山云 ai应用平台开发 一面 27届-日常实习-金山云-AI应用平台开发-一面">
+                  <td>2026-04-10</td>
+                  <td>金山云</td>
+                  <td>ai应用平台开发</td>
+                  <td>一面</td>
+                  <td>27届-日常实习-金山云-AI应用平台开发-一面</td>
+                  <td><a href="https://www.nowcoder.com/discuss/872055401926164480" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-09 阿里淘天 ai应用开发 一面 阿里淘天 AI应用开发 暑期实习一面">
+                  <td>2026-04-09</td>
+                  <td>阿里淘天</td>
+                  <td>ai应用开发</td>
+                  <td>一面</td>
+                  <td>阿里淘天 AI应用开发 暑期实习一面</td>
+                  <td><a href="https://www.nowcoder.com/feed/main/detail/39627b379e8e46ce9cb3a3b8eae46959" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-09 阿里国际 ai应用开发 二面 阿里国际AI应用开发二面">
+                  <td>2026-04-09</td>
+                  <td>阿里国际</td>
+                  <td>ai应用开发</td>
+                  <td>二面</td>
+                  <td>阿里国际AI应用开发二面</td>
+                  <td><a href="https://www.nowcoder.com/feed/main/detail/c2772ead209549a0bb6e54f2df205a31" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-09 蔚来 ai应用开发 一面 蔚来 AI应用开发 暑期一面分享">
+                  <td>2026-04-09</td>
+                  <td>蔚来</td>
+                  <td>ai应用开发</td>
+                  <td>一面</td>
+                  <td>蔚来 AI应用开发 暑期一面分享</td>
+                  <td><a href="https://www.nowcoder.com/feed/main/detail/5af31c8afe254a00a69a6c0141e6908a" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-09 腾讯 ai agent开发 一面 腾讯暑期实习 ai agent开发一面">
+                  <td>2026-04-09</td>
+                  <td>腾讯</td>
+                  <td>ai agent开发</td>
+                  <td>一面</td>
+                  <td>腾讯暑期实习 ai agent开发一面</td>
+                  <td><a href="https://www.nowcoder.com/feed/main/detail/497e14617f01453db84dfbc264e5751e" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-09 腾讯 ai应用开发 一面 腾讯日常实习一面-AI应用开发 1h">
+                  <td>2026-04-09</td>
+                  <td>腾讯</td>
+                  <td>ai应用开发</td>
+                  <td>一面</td>
+                  <td>腾讯日常实习一面-AI应用开发 1h</td>
+                  <td><a href="https://www.nowcoder.com/feed/main/detail/37e847fa267b4c3898b38e2952b5286e" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-09 米哈游 ai agent研发 一面 米哈游-AI Agent研发-暑期一面">
+                  <td>2026-04-09</td>
+                  <td>米哈游</td>
+                  <td>ai agent研发</td>
+                  <td>一面</td>
+                  <td>米哈游-AI Agent研发-暑期一面</td>
+                  <td><a href="https://www.nowcoder.com/feed/main/detail/a1566acc2660477dbf54b58885513d6c" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-09 百度 ai agent开发 一面 百度ai agent开发春招一面">
+                  <td>2026-04-09</td>
+                  <td>百度</td>
+                  <td>ai agent开发</td>
+                  <td>一面</td>
+                  <td>百度ai agent开发春招一面</td>
+                  <td><a href="https://www.nowcoder.com/feed/main/detail/c807140b75bd4cf3bf4166660676db5d" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-09 快手 ai agent开发 一面 快手AI Agent开发一面（已过）">
+                  <td>2026-04-09</td>
+                  <td>快手</td>
+                  <td>ai agent开发</td>
+                  <td>一面</td>
+                  <td>快手AI Agent开发一面（已过）</td>
+                  <td><a href="https://www.nowcoder.com/feed/main/detail/7ce89f19368b46da853c718f2ae2f53c" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-09 字节 agent开发 一面 字节agent开发实习一面凉经">
+                  <td>2026-04-09</td>
+                  <td>字节</td>
+                  <td>agent开发</td>
+                  <td>一面</td>
+                  <td>字节agent开发实习一面凉经</td>
+                  <td><a href="https://www.nowcoder.com/feed/main/detail/69b9cd21f1244d3cb19499f249228b50" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-09 字节 agent开发 一面 字节Agent开发一面90min凉经">
+                  <td>2026-04-09</td>
+                  <td>字节</td>
+                  <td>agent开发</td>
+                  <td>一面</td>
+                  <td>字节Agent开发一面90min凉经</td>
+                  <td><a href="https://www.nowcoder.com/feed/main/detail/91c5394e57c14927841d7a86bfe427c2" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-09 淘天 ai agent开发 二面 4.9-淘天agent-二面">
+                  <td>2026-04-09</td>
+                  <td>淘天</td>
+                  <td>ai agent开发</td>
+                  <td>二面</td>
+                  <td>4.9-淘天agent-二面</td>
+                  <td><a href="https://www.nowcoder.com/discuss/871774510138023936" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-08 快手 大模型数据应用开发 一面 实习-快手电商-大模型数据应用开发一面">
+                  <td>2026-04-08</td>
+                  <td>快手</td>
+                  <td>大模型数据应用开发</td>
+                  <td>一面</td>
+                  <td>实习-快手电商-大模型数据应用开发一面</td>
+                  <td><a href="https://www.nowcoder.com/discuss/871506086656761856" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-08 字节 ai应用开发 未明确 字节AI应用开发实习面经分享">
+                  <td>2026-04-08</td>
+                  <td>字节</td>
+                  <td>ai应用开发</td>
+                  <td>未明确</td>
+                  <td>字节AI应用开发实习面经分享</td>
+                  <td><a href="https://www.nowcoder.com/feed/main/detail/76448605da6e4aee99a394da83d1718f" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-08 字节 ai应用开发 二面 AI应用开发日常实习二面-字节">
+                  <td>2026-04-08</td>
+                  <td>字节</td>
+                  <td>ai应用开发</td>
+                  <td>二面</td>
+                  <td>AI应用开发日常实习二面-字节</td>
+                  <td><a href="https://www.nowcoder.com/feed/main/detail/0607316a2492400896408c95e10951e0" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-05 蚂蚁 ai应用开发 二面 蚂蚁ai应用开发实习二面">
+                  <td>2026-04-05</td>
+                  <td>蚂蚁</td>
+                  <td>ai应用开发</td>
+                  <td>二面</td>
+                  <td>蚂蚁ai应用开发实习二面</td>
+                  <td><a href="https://www.nowcoder.com/feed/main/detail/718c5a06a65645d7a462a56b457cb35e" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-03 淘天 ai应用开发 一面 淘天-ai应用开发-一面">
+                  <td>2026-04-03</td>
+                  <td>淘天</td>
+                  <td>ai应用开发</td>
+                  <td>一面</td>
+                  <td>淘天-ai应用开发-一面</td>
+                  <td><a href="https://www.nowcoder.com/feed/main/detail/076a8d1acaae4795a28d4a5370872bd6" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-04-02 字节 ai应用开发 一面 字节 ai应用开发">
+                  <td>2026-04-02</td>
+                  <td>字节</td>
+                  <td>ai应用开发</td>
+                  <td>一面</td>
+                  <td>字节 ai应用开发</td>
+                  <td><a href="https://www.nowcoder.com/feed/main/detail/c5947496fc29440883611173478dc257" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+                <tr data-search-row="2026-03-21 字节 大模型应用开发 二面 字节 大模型应用开发 二面 日常实习">
+                  <td>2026-03-21</td>
+                  <td>字节</td>
+                  <td>大模型应用开发</td>
+                  <td>二面</td>
+                  <td>字节 大模型应用开发 二面 日常实习</td>
+                  <td><a href="https://www.nowcoder.com/feed/main/detail/30b6f37830414df5a32d851f2004df7a" target="_blank" rel="noreferrer">查看原帖</a></td>
+                </tr>
+                
+              </tbody>
+            </table>
+          </div>
+        </section>
 
-    <div class="footer">
-      由本地脚本自动生成。更新流程：抓取牛客面经 → 分析聚类 → 生成网页/PDF。
+        <div class="footer">
+          由本地脚本自动生成。更新流程：抓取牛客面经 → 分析聚类 → 生成网页/PDF。
+        </div>
+      </main>
     </div>
   </div>
   <script src="assets/app.js"></script>
