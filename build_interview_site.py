@@ -33,7 +33,7 @@ REPORT_FILES = [
 PDF_PATH = SITE_DIR / '牛客近6个月AI应用开发面经仪表盘.pdf'
 INDEX_PATH = SITE_DIR / 'index.html'
 CNAME_PATH = SITE_DIR / 'CNAME'
-CUSTOM_DOMAIN = 'www.hilloworld.com'
+CUSTOM_DOMAIN = 'interview.hilloworld.com'
 
 STYLE = r'''
 :root {
