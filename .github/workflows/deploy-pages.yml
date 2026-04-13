@@ -37,10 +37,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements-deploy.txt
 
-      - name: Build latest dashboard
+      - name: Refresh interview data
+        if: github.event_name == 'schedule'
         run: |
           python collect_nowcoder_ai_app_interviews.py
           python analyze_nowcoder_ai_app_interviews.py
+
+      - name: Build dashboard site
+        run: |
           python build_interview_site.py
           touch site/.nojekyll
 
