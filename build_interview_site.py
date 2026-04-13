@@ -32,6 +32,8 @@ REPORT_FILES = [
 ]
 PDF_PATH = SITE_DIR / '牛客近6个月AI应用开发面经仪表盘.pdf'
 INDEX_PATH = SITE_DIR / 'index.html'
+CNAME_PATH = SITE_DIR / 'CNAME'
+CUSTOM_DOMAIN = 'www.hilloworld.com'
 
 STYLE = r'''
 :root {
@@ -650,10 +652,12 @@ def main() -> None:
     (ASSETS_DIR / 'styles.css').write_text(STYLE, encoding='utf-8')
     (ASSETS_DIR / 'app.js').write_text(SCRIPT, encoding='utf-8')
     INDEX_PATH.write_text(html, encoding='utf-8')
+    CNAME_PATH.write_text(f'{CUSTOM_DOMAIN}\n', encoding='utf-8')
     build_pdf(REPORT_FILES, PDF_PATH, stats, company_counter.most_common(10))
 
     print(f'index={INDEX_PATH}')
     print(f'pdf={PDF_PATH}')
+    print(f'cname={CNAME_PATH}')
 
 
 if __name__ == '__main__':
