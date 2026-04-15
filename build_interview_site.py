@@ -28,6 +28,7 @@ REPORT_FILES = [
     ROOT / '牛客近6个月AI应用开发面经汇总.md',
     ROOT / '牛客近6个月AI应用开发面经-知识点聚类.md',
     ROOT / '牛客近6个月AI应用开发面经-高频题题库与答案框架.md',
+    ROOT / '牛客近6个月AI应用开发面经-逐题优秀答案稿.md',
     ROOT / '牛客近6个月AI应用开发面经-公司维度对比分析.md',
 ]
 PDF_PATH = SITE_DIR / '牛客近6个月AI应用开发面经仪表盘.pdf'

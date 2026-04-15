@@ -45,6 +45,7 @@ jobs:
 
       - name: Build dashboard site
         run: |
+          python generate_nowcoder_ai_answer_bank.py
           python build_interview_site.py
           touch site/.nojekyll
 
